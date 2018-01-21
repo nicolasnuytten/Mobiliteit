@@ -18,9 +18,9 @@ class Controller {
     }
     //the variables css and js are set here and echo'd in layout.php
     //don't set a css link in development, as this is injected by webpack-dev-server
-    $this->set('css', '');
+    $this->set('css', '<link rel="stylesheet" href="css/style.css">');
     //link to the webpack-dev-server livereload script in development mode
-    $this->set('js', '<script src="http://localhost:3000/js/script.js"></script>');
+    $this->set('js', '<script src="http://localhost:8888/src/js/script.js"></script>');
     if($this->env == 'production') {
       //link to the css file in production mode instead of no-css
       $this->set('css', '<link rel="stylesheet" href="css/style.css">');
