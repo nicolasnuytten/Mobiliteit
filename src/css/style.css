@@ -275,6 +275,7 @@ body {
 
 .actie-link:hover {
   color: var(--light-blue);
+  border-bottom: .5rem solid transparent;
 }
 
 .button {
@@ -355,10 +356,91 @@ body {
 
 .nieuws-article-button:hover {
   color: var(--light-blue);
-  border: white;
+  border-bottom: .5rem solid transparent;
 }
 
 footer {
   background: var(--light-blue);
+  padding: 1rem;
+}
 
+.footer-nieuwsbrief {
+  font-family: HelveticaNeue-Bold;
+  font-size: 5vw;
+  color: white;
+  padding: 1rem;
+}
+
+.nieuwsbrief {
+  margin: 1rem auto;
+  width: 90vw;
+}
+
+.form-email {
+  display: flex;
+  flex-direction: column;
+  height: 5rem;
+  justify-content: space-between;
+  font-family: Reitam;
+  color: white;
+  font-size: 4vw;
+  width: 90vw;
+  margin: 1rem auto;
+}
+
+.form-email-input {
+  background: var(--light-blue);
+  border: none;
+  outline: none;
+  border-bottom: white .2rem solid;
+  font-size: 3vw;
+}
+
+.footer-info {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-item {
+  padding: 1rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+.submit {
+  background: var(--dark-blue);
+  width: 30vw;
+  padding: 1rem;
+  margin: 2rem 0;
+  border: none;
+  box-shadow: 0 2px 4px 0 var(--dark-blue);
+  color: white;
+  font-family: Reitam;
+  font-size: 3vw;
+}
+
+.submit:hover {
+  background-color: white;
+  color: var(--dark-blue);
+}
+
+.language {
+  width: 15vw;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: space-around;
+}
+
+.language-item {
+  text-decoration: none;
+  color: white;
+  font-family: Reitam;
+  font-size: 3vw;
+}
+
+.active {
+  color: var(--dark-blue);
 }
