@@ -27,39 +27,52 @@
         <ul class="tabbar">
           <li class="tabbar-item">
             <a href="" class="item-text">
-              <img class="item-img" src="assets/images/calendar.png" alt="calendar icon" width="166" height="172">
-              <p>zoek acties</p>
+              <img class="item-img" src="assets/images/icons/calendar.png" alt="calendar icon" width="166" height="172">
+              <p>acties</p>
             </a>
           </li>
           <li class="tabbar-item">
             <a href="" class="item-text">
-              <img class="item-img" src="assets/images/leaf.png" alt="leaf icon" width="137" height="131">
+              <img class="item-img" src="assets/images/icons/leaf.png" alt="leaf icon" width="137" height="131">
               <p>organiseren</p>
             </a>
           </li>
           <li class="tabbar-item">
             <a href="" class="item-text">
-              <img class="item-img" src="assets/images/nieuws.png" alt="nieuws icon" width="152" height="187">
+              <img class="item-img" src="assets/images/icons/nieuws.png" alt="nieuws icon" width="152" height="187">
               <p>nieuws</p>
             </a>
           </li>
           <li class="tabbar-item">
             <a href="" class="item-text">
-              <img class="item-img" src="assets/images/info.png" alt="info icon" width="235" height="235">
+              <img class="item-img" src="assets/images/icons/info.png" alt="info icon" width="235" height="235">
               <p>over</p>
             </a>
           </li>
         </ul>
       </nav>
     </header>
-
     <div class="container">
       <?php if(!empty($_SESSION['info'])): ?><div class="alert alert-success"><?php echo $_SESSION['info'];?></div><?php endif; ?>
       <?php if(!empty($_SESSION['error'])): ?><div class="alert alert-danger"><?php echo $_SESSION['error'];?></div><?php endif; ?>
-
       <?php echo $content; ?>
     </div>
-
+    <footer>
+      <h1 class="footer-nieuwsbrief">Blijf op de hoogte van het laatste nieuws via onze nieuwsbrief!</h1>
+      <form class="nieuwsbrief" action="index.html" method="post">
+        <div class="form-inputs">
+          <label for="email">Email:<input type="email" name="email" value=""></label>
+          <label for=""><input type="submit" name="submit" value=""> <img src="assets/images/icons/arrow.png" alt="arrow icon" width="30" height="18"> </label>
+        </div>
+      </form>
+      <section class="footer-info">
+        <div class="links">
+          <a href="#"><img src="assets/images/icons/facebook.png" alt="facebook icon" width="32" height="32"></a>
+          <a href="#"><img src="assets/images/icons/instagram.png" alt="instagram icon" width="32" height="32"></a>
+          <a href="#"><img src="assets/images/icons/twitter.png" alt="twitter icon" width="32" height="32"></a>
+        </div>
+      </section>
+    </footer>
     <?php echo $js;?>
   </body>
 </html>

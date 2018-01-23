@@ -55,11 +55,58 @@ header {
   text-align: center;
   color: white;
   font-family: Reitam;
-  font-size: 2vw;
+  font-size: 3.5vw;
   text-decoration: none;
-  height: 13vw;
+  height: 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+
+.banner {
+  background: url(/assets/images/icons/pattern.png), var(--light-blue);
+  background-size: 10rem;
+  background-blend-mode: soft-light;
+  padding: 1rem;
+}
+
+.banner-title {
+  font-family: Reitam;
+  font-size: 10vw;
+  color: white;
+  text-align: center;
+  line-height: 1.2;
+  margin: 2rem auto;
+}
+
+.banner-date {
+  background: var(--dark-blue);
+  padding: 1rem;
+  color: white;
+  font-family: Reitam;
+  width: 40vw;
+  text-align: center;
+  margin: 2rem auto;
+  font-size: 3vw;
+}
+
+.banner-hashtag {
+  font-family: Reitam;
+  font-size: 6vw;
+  color: var(--dark-blue);
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.actie {
+  height: 50vh;
+  margin: 1rem 0rem;
+}
+
+.actie-img {
+  width: 100vw;
+  height: 50vh;
+  z-index: -1;
+  position: absolute;
 }
