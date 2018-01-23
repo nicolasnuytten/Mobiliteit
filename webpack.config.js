@@ -67,14 +67,14 @@ const productionConfig = merge([
 ]);
 const developmentConfig = merge([
   {
-    devServer: { overlay: true },
+    devServer: {overlay: true},
   },
   parts.loadCSS(),
 ]);
 
-if(process.env.NODE_ENV === `production`){
+if (process.env.NODE_ENV === `production`) {
   console.log(`Building production`);
   module.exports = merge(commonConfig, productionConfig);
-}else{
+} else {
   module.exports = merge(commonConfig, developmentConfig);
 }

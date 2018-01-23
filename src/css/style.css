@@ -3,6 +3,9 @@
 :root {
   --dark-blue: #123847;
   --light-blue: #41c7ff;
+  --light-grey: #f6f6f6;
+  --actie-height: 40vh;
+  --text: 3vw;
 }
 
 html {
@@ -18,6 +21,10 @@ header {
   background-color: var(--light-blue);
 }
 
+body {
+  background: var(--light-grey);
+}
+
 .home-link {
   text-decoration: none;
   margin: 1rem;
@@ -25,7 +32,7 @@ header {
 
 .home-link-text {
   text-align: center;
-  font-size: 2rem;
+  font-size: 6vw;
   color: var(--dark-blue);
   font-family: Reitam;
 }
@@ -69,6 +76,7 @@ header {
   background-size: 10rem;
   background-blend-mode: soft-light;
   padding: 1rem;
+  width: 100vw;
 }
 
 .banner-title {
@@ -89,6 +97,7 @@ header {
   text-align: center;
   margin: 2rem auto;
   font-size: 3vw;
+  box-shadow: 0 2px 4px 0 var(--dark-blue);
 }
 
 .banner-hashtag {
@@ -99,14 +108,257 @@ header {
   text-align: center;
 }
 
+.intro {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.intro-title {
+  font-family: Reitam;
+  font-size: 6vw;
+  color: var(--dark-blue);
+  text-align: center;
+  margin: 2rem auto;
+  width: 90vw;
+}
+
+.text {
+  font-family: HelveticaNeue;
+  font-size: var(--text);
+  color: var(--dark-blue);
+  line-height: 1.5;
+  margin: 1rem auto;
+  width: 90vw;
+  text-align: left;
+}
+
+.intro-stats {
+  margin: 0 auto;
+  margin: 2rem 0;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.stats-title {
+  font-family: Reitam;
+  font-size: 5vw;
+  color: var(--dark-blue);
+  text-align: center;
+  grid-column: span 3;
+}
+
+.stats-info {
+  height: 30vw;
+  grid-row-start: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.stats-img {
+  width: 15vw;
+  height: 15vw;
+}
+
+.stats-text {
+  font-family: Reitam;
+  font-size: 4vw;
+  text-align: center;
+}
+
+.specialday {
+  background: url(/assets/images/icons/zebrapad.png);
+}
+
+.specialday-title {
+  font-family: Reitam;
+  font-size: 6vw;
+  margin: 1rem 0;
+  height: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.specialday-info {
+  display: flex;
+  flex-direction: column;
+  background: var(--light-blue);
+  padding: 1rem;
+}
+
+.home-acties {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .actie {
-  height: 50vh;
-  margin: 1rem 0rem;
+  height: var(--actie-height);
+  margin: 1rem 0;
+}
+
+.home-acties-title {
+  text-align: center;
+  font-family: Reitam;
+  font-size: 8vw;
 }
 
 .actie-img {
   width: 100vw;
-  height: 50vh;
-  z-index: -1;
+  height: var(--actie-height);
   position: absolute;
+  object-fit: cover;
+}
+
+.overlay {
+  background: black;
+  mix-blend-mode: multiply;
+  width: 100vw;
+  height: var(--actie-height);
+  opacity: .5;
+  position: absolute;
+}
+
+.actie:hover .overlay {
+  opacity: .2;
+}
+
+.actie-info {
+  width: 100vw;
+  height: var(--actie-height);
+  position: relative;
+  color: white;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr repeat(2, 8vw);
+
+}
+
+.acite-title {
+  font-family: Reitam;
+  font-size: 6vw;
+  color: white;
+}
+
+.actie-date {
+  grid-row-start: 2;
+  font-family: HelveticaNeue;
+  font-size: 6vw;
+  color: white;
+  align-self: flex-end;
+}
+
+.actie-city {
+  grid-row-start: 3;
+  font-family: HelveticaNeue;
+  font-size: 6vw;
+  color: white;
+  align-self: flex-end;
+}
+
+.actie-link {
+  grid-row-start: 3;
+  grid-column-start: 2;
+  justify-self: flex-end;
+  text-decoration: none;
+  border-bottom: .5rem solid var(--light-blue);
+  padding-left: 3rem;
+  align-self: flex-end;
+  color: white;
+  font-family: HelveticaNeue-Bold;
+  font-size: 6vw;
+}
+
+.actie-link:hover {
+  color: var(--light-blue);
+}
+
+.button {
+  text-decoration: none;
+  background: var(--dark-blue);
+  color: white;
+  font-family: Reitam;
+  width: 70vw;
+  padding: 1rem;
+  text-align: center;
+  margin: 1rem auto;
+  font-size: 4vw;
+  box-shadow: 0 2px 4px 0 var(--dark-blue);
+}
+
+.button:hover {
+  background: white;
+  color: var(--dark-blue);
+}
+
+.organiseer {
+  background-color: var(--light-blue);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.organiseer-title {
+  font-family: Reitam;
+  font-size: 6vw;
+  color: white;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.nieuws {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.nieuws-title {
+  font-family: Reitam;
+  font-size: 6vw;
+  color: var(--dark-blue);
+}
+
+.nieuws-subtitle {
+  font-family: Reitam;
+  font-size: 4vw;
+  color: var(--dark-blue);
+}
+
+.nieuws-article {
+  margin: 1rem auto;
+  background: white;
+  padding: 2rem 0;
+  width: 100vw;
+  text-align: center;
+}
+
+.nieuws-article-img {
+  height: 30vh;
+  width: 100vw;
+}
+
+.nieuws-article-button {
+  text-align: right;
+  width: 90vw;
+  border-bottom: .5rem solid var(--light-blue);
+  padding: 0 1rem;
+  color: var(--dark-blue);
+  font-size: 4vw;
+  text-decoration: none;
+  font-family: HelveticaNeue-Bold;
+}
+
+.nieuws-article-button:hover {
+  color: var(--light-blue);
+  border: white;
+}
+
+footer {
+  background: var(--light-blue);
+
 }

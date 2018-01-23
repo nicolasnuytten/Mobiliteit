@@ -71,6 +71,9 @@
           <a href="#"><img src="assets/images/icons/instagram.png" alt="instagram icon" width="32" height="32"></a>
           <a href="#"><img src="assets/images/icons/twitter.png" alt="twitter icon" width="32" height="32"></a>
         </div>
+        <div class="language">
+          <a href="#" class="language-item-active">NL</a>|<a href="#" class="language-item-active">FR</a>
+        </div>
       </section>
     </footer>
     <?php echo $js;?>
