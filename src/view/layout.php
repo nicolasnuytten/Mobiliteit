@@ -26,19 +26,19 @@
       <nav class="tabbar-nav">
         <ul class="tabbar">
           <li class="tabbar-item">
-            <a href="#" class="item-text">
+            <a href="" class="item-text">
               <img class="item-img" src="assets/images/calendar.png" alt="calendar icon" width="166" height="172">
               <p>zoek acties</p>
             </a>
           </li>
           <li class="tabbar-item">
-            <a href="#" class="item-text">
+            <a href="" class="item-text">
               <img class="item-img" src="assets/images/leaf.png" alt="leaf icon" width="137" height="131">
               <p>organiseren</p>
             </a>
           </li>
           <li class="tabbar-item">
-            <a href="#" class="item-text">
+            <a href="" class="item-text">
               <img class="item-img" src="assets/images/nieuws.png" alt="nieuws icon" width="152" height="187">
               <p>nieuws</p>
             </a>

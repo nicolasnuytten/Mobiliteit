@@ -18,7 +18,7 @@ const commonConfig = merge([ {
     contentBase: `./src`,
     historyApiFallback: true,
     hot: true,
-    port: 8888,
+    port: 8008,
   },
   output: {
     path: PATHS.dist,
