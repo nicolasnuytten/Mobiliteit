@@ -5,7 +5,7 @@
   --light-blue: #41c7ff;
   --light-grey: #f6f6f6;
   --actie-height: 40vh;
-  --text: 3vw;
+  --text: 4vw;
 }
 
 html {
@@ -25,6 +25,12 @@ body {
   background: var(--light-grey);
 }
 
+main {
+  width: 100vw;
+  display: grid;
+  grid-row-gap: 3rem;
+}
+
 .home-link {
   text-decoration: none;
   margin: 1rem;
@@ -37,6 +43,10 @@ body {
   font-family: Reitam;
 }
 
+.home-link-text:hover {
+  color: white;
+}
+
 .tabbar-nav {
   background-color: var(--dark-blue);
   padding: 1rem;
@@ -44,13 +54,17 @@ body {
 
 .tabbar {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: flex-end;
   padding: 0;
 }
 
 .tabbar-item {
   list-style-type: none;
+}
+
+.tabbar-item:hover .item-text {
+  color: var(--light-blue);
 }
 
 .item-img {
@@ -97,7 +111,7 @@ body {
   text-align: center;
   margin: 2rem auto;
   font-size: 3vw;
-  box-shadow: 0 2px 4px 0 var(--dark-blue);
+  box-shadow: 0 0 10px -4px var(--dark-blue);
 }
 
 .banner-hashtag {
@@ -113,13 +127,15 @@ body {
   margin: 0 auto;
 }
 
+.intro-img {
+  display: none;
+}
+
 .intro-title {
   font-family: Reitam;
   font-size: 6vw;
   color: var(--dark-blue);
   text-align: center;
-  margin: 2rem auto;
-  width: 90vw;
 }
 
 .text {
@@ -128,7 +144,6 @@ body {
   color: var(--dark-blue);
   line-height: 1.5;
   margin: 1rem auto;
-  width: 90vw;
   text-align: left;
 }
 
@@ -166,6 +181,7 @@ body {
   font-family: Reitam;
   font-size: 4vw;
   text-align: center;
+  color: var(--dark-blue);
 }
 
 .specialday {
@@ -180,6 +196,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
+
+.specialday-img {
+  display: none;
 }
 
 .specialday-info {
@@ -234,11 +254,11 @@ body {
   display: grid;
   padding: 1rem;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr repeat(2, 8vw);
+  grid-template-rows: 1fr repeat(2, min-content);
 
 }
 
-.acite-title {
+.actie-title {
   font-family: Reitam;
   font-size: 6vw;
   color: white;
@@ -247,7 +267,7 @@ body {
 .actie-date {
   grid-row-start: 2;
   font-family: HelveticaNeue;
-  font-size: 6vw;
+  font-size: 8vw;
   color: white;
   align-self: flex-end;
 }
@@ -275,7 +295,7 @@ body {
 
 .actie-link:hover {
   color: var(--light-blue);
-  border-bottom: .5rem solid transparent;
+  border-bottom: .5rem solid white;
 }
 
 .button {
@@ -288,7 +308,7 @@ body {
   text-align: center;
   margin: 1rem auto;
   font-size: 4vw;
-  box-shadow: 0 2px 4px 0 var(--dark-blue);
+  box-shadow: 0 0 10px -4px var(--dark-blue);
 }
 
 .button:hover {
@@ -296,7 +316,8 @@ body {
   color: var(--dark-blue);
 }
 
-.organiseer {
+.organiseer-info {
+  width: 100vw;
   background-color: var(--light-blue);
   padding: 1rem;
   display: flex;
@@ -309,6 +330,10 @@ body {
   color: white;
   text-align: center;
   margin: 1rem 0;
+}
+
+.organiseer-img {
+  display: none;
 }
 
 .nieuws {
@@ -340,7 +365,7 @@ body {
 
 .nieuws-article-img {
   height: 30vh;
-  width: 100vw;
+  width: 60vw;
 }
 
 .nieuws-article-button {
@@ -356,7 +381,7 @@ body {
 
 .nieuws-article-button:hover {
   color: var(--light-blue);
-  border-bottom: .5rem solid transparent;
+  border-bottom: .5rem solid var(--dark-blue);
 }
 
 footer {
@@ -405,8 +430,11 @@ footer {
 
 .link-item {
   padding: 1rem;
-  width: 5rem;
-  height: 5rem;
+}
+
+.link-item:hover {
+  background-color: var(--dark-blue);
+  padding: 1rem;
 }
 
 .submit {
@@ -415,7 +443,7 @@ footer {
   padding: 1rem;
   margin: 2rem 0;
   border: none;
-  box-shadow: 0 2px 4px 0 var(--dark-blue);
+  box-shadow: 0 0 10px -4px var(--dark-blue);
   color: white;
   font-family: Reitam;
   font-size: 3vw;
@@ -427,7 +455,7 @@ footer {
 }
 
 .language {
-  width: 15vw;
+  width: 20vw;
   display: flex;
   flex-direction: row;
   padding: 1rem;
@@ -438,9 +466,281 @@ footer {
   text-decoration: none;
   color: white;
   font-family: Reitam;
-  font-size: 3vw;
+  font-size: 4vw;
+}
+
+.language-item:hover {
+  color: var(--dark-blue);
 }
 
 .active {
   color: var(--dark-blue);
+}
+
+@media only screen and (min-width: 768px) {
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .home-link-text {
+    font-size: 2vw;
+    text-align: left;
+  }
+
+  .tabbar {
+    justify-content: space-between;
+    width: 40vw;
+  }
+
+  .tabbar-nav {
+    background: var(--light-blue);
+  }
+
+  .tabbar-item {
+    display: flex;
+    height: 3vw;
+  }
+
+  .tabbar-item:hover .item-text {
+    color: var(--dark-blue);
+  }
+
+  .item-text:hover {
+    color: var(--dark-blue);
+  }
+
+  .item-img {
+    display: none;
+  }
+
+  .item-text {
+    height: 3vw;
+    color: white;
+    font-family: Reitam;
+    font-size: 1.5vw;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .banner {
+    background-size: 18rem;
+    display: grid;
+    grid-template-columns: 20vw repeat(2, 30vw) 20vw;
+    grid-template-rows: 1fr 10vh 10vh;
+    align-items: center;
+  }
+
+  .banner-title {
+    font-size: 6vw;
+    grid-column: span 4;
+  }
+
+  .banner-date {
+    width: 26vw;
+    font-size: 2vw;
+    grid-row: 2;
+    grid-column: 3;
+  }
+
+  .banner-hashtag {
+    font-size: 3vw;
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  .intro {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 45vw 45vw;
+    grid-template-rows: 10rem repeat(2, min-content);
+  }
+
+  .intro-img {
+    display: block;
+    width: 45vw;
+    height: 30vh;
+    grid-column: 1;
+  }
+
+  .intro-title {
+    font-size: 2vw;
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .text {
+    font-size: 1.4vw;
+  }
+
+  .intro-stats {
+    grid-column: 2;
+    margin: 2rem auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stats-title {
+    font-size: 2vw;
+    grid-column: span 3;
+  }
+
+  .stats-info {
+    height: 10rem;
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .stats-img {
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .stats-text {
+    font-size: 1.4vw;
+  }
+
+  .specialday {
+    width: 100vw;
+    height: 40vh;
+    margin: 0 auto;
+    background-repeat: repeat-x;
+    display: grid;
+    grid-template-columns: 5vw 50vw 25vw 5vw;
+    grid-template-rows: 10vw 25vw;
+  }
+
+  .specialday-title {
+    font-size: 4vw;
+    grid-row: 1;
+    grid-column: 2;
+    z-index: 3;
+    justify-content: flex-start;
+    height: 6vw;
+  }
+
+  .specialday-info {
+    width: 80vw;
+    margin: 0 auto;
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  .specialday-text {
+    width: 45vw;
+    margin: 1rem;
+  }
+
+  .specialday-button {
+    width: 40vw;
+    margin: 1rem;
+    font-size: 2vw;
+  }
+
+  .specialday-img {
+    display: block;
+    width: 32vw;
+    height: 32vh;
+    grid-column: 3;
+    z-index: 2;
+    margin: 2rem;
+    box-shadow: 0 0 10px -4px var(--dark-blue);
+  }
+
+  .home-acties {
+    display: grid;
+    width: 90vw;
+    grid-template-rows: min-content 50vh;
+    grid-template-columns: 50vw 50vw;
+    margin: 0 auto;
+  }
+
+  .home-acties-title {
+    font-size: 5vw;
+    grid-row: 1;
+    grid-column: 1;
+    text-align: left;
+  }
+
+  .actie {
+    width: 40vw;
+    height: 40vw;
+  }
+
+  .actie-img {
+    width: 40vw;
+    height: 35vw;
+  }
+
+  .overlay {
+    width: 40vw;
+    height: 35vw;
+  }
+
+  .actie-info {
+    width: 40vw;
+    height: 40vh;
+    grid-template-rows: 25vw repeat(2, min-content);
+  }
+
+  .actie-title {
+    font-size: 3vw;
+  }
+
+  .actie-date {
+    font-size: 4vw;
+  }
+
+  .actie-city {
+    font-size: 3vw;
+  }
+
+  .actie-link {
+    font-size: 3vw;
+  }
+
+  .actie-button {
+    grid-row: 1;
+    grid-column: 2;
+    width: 25vw;
+    font-size: 2vw;
+    justify-self: right;
+  }
+
+  .organiseer {
+    display: grid;
+    grid-template-columns: 40vw 60vw;
+  }
+
+  .organiseer-info {
+    width: 60vw;
+    height: 30vh;
+    grid-column: 2;
+    box-shadow: 0 0 10px -4px var(--dark-blue);
+  }
+
+  .organiseer-title {
+    font-size: 3vw;
+  }
+
+  .organiseer-img {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 60vw;
+    height: 30vh;
+  }
+
+  .organiseer-button {
+    width: 30vw;
+    font-size: 2vw;
+  }
 }

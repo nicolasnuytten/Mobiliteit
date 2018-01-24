@@ -14,8 +14,7 @@ exports.extractCSS = () => {
           use: extractCSS.extract({
             use: [
               `css-loader`,
-              `postcss-loader`,
-            ],
+              `postcss-loader`],
             publicPath: `../`,
           }),
         },
@@ -23,8 +22,6 @@ exports.extractCSS = () => {
     },
   };
 };
-
-
 exports.loadCSS = () => ({
   module: {
     rules: [

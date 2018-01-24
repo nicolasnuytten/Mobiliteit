@@ -67,9 +67,9 @@
       </form>
       <section class="footer-info">
         <div class="links">
-          <a href="#"><img src="assets/images/icons/facebook.png" alt="facebook icon" width="32" height="32" class="link-item"></a>
-          <a href="#"><img src="assets/images/icons/instagram.png" alt="instagram icon" width="32" height="32" class="link-item"></a>
-          <a href="#"><img src="assets/images/icons/twitter.png" alt="twitter icon" width="32" height="32" class="link-item"></a>
+          <a href="#"><img src="assets/images/icons/facebook.png" alt="facebook icon" width="48" height="48" class="link-item"></a>
+          <a href="#"><img src="assets/images/icons/instagram.png" alt="instagram icon" width="48" height="48" class="link-item"></a>
+          <a href="#"><img src="assets/images/icons/twitter.png" alt="twitter icon" width="48" height="42" class="link-item"></a>
         </div>
         <div class="language">
           <a href="#" class="language-item active">NL</a>

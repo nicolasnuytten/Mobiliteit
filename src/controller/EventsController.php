@@ -11,7 +11,11 @@ class EventsController extends Controller {
     $this->eventDAO = new EventDAO();
   }
 
-  public function index() {
+  public function index(){
+
+  }
+
+  public function detail() {
     $conditions = array();
 
     //example: search on title

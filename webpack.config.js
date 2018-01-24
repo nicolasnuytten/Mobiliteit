@@ -1,12 +1,20 @@
 const path = require(`path`);
 const webpack = require(`webpack`);
+const HtmlWebpackPlugin = require(`html-webpack-plugin`);
+
+const CriticalPlugin = require(`webpack-plugin-critical`).CriticalPlugin;
+
+const ImageminPlugin = require(`imagemin-webpack-plugin`).default;
+const imageminJpegRecompress = require(`imagemin-jpeg-recompress`);
+
+const merge = require(`webpack-merge`);
+const parts = require(`./webpack.parts.js`);
 
 const PATHS = {
   src: path.join(__dirname, `src`),
   dist: path.join(__dirname, `dist`),
 };
-const merge = require(`webpack-merge`);
-const parts = require(`./webpack.parts.js`);
+
 
 const commonConfig = merge([ {
   entry: [
@@ -18,6 +26,7 @@ const commonConfig = merge([ {
     contentBase: `./src`,
     historyApiFallback: true,
     hot: true,
+    host: `0.0.0.0`,
     port: 8008,
   },
   output: {
@@ -40,16 +49,46 @@ const commonConfig = merge([ {
         },
         ],
       }, {
-        test: /\.html$/,
+        test: /\.php$/,
         loader: `html-loader`,
-      }, {
-        test: /\.jpe?g$/,
-        loader: `url-loader`,
         options: {
-          limit: 1000,
-          context: `./src`,
-          name: `[path][name].[ext]`,
-        },
+          attrs: [
+            `img:src`,
+            `source:srcset`
+          ]
+        }
+      }, {
+        test: /\.(jpe?g|png|gif|webp|svg)$/,
+        use: [
+          {
+            loader: `file-loader`,
+            options: {
+              limit: 1000,
+              context: `./src`,
+              name: `[path][name].[ext]`
+            }
+          }, {
+            loader: `image-webpack-loader`,
+            options: {
+              bypassOnDebug: true,
+              mozjpeg: {
+                progressive: true,
+                quality: 65
+              },
+              // optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: true,
+              },
+              pngquant: {
+                quality: `65-90`,
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+            },
+          },
+        ]
       },
     ],
   },
@@ -64,10 +103,21 @@ const commonConfig = merge([ {
 
 const productionConfig = merge([
   parts.extractCSS(),
+  {
+    plugins: [
+      new ImageminPlugin({
+        test: /\.(jpe?g)$/i,
+        plugins: [
+          imageminJpegRecompress({})
+        ]
+      })
+    ]
+  }
 ]);
 const developmentConfig = merge([
   {
-    devServer: {overlay: true},
+    devServer: {overlay: true,
+      contentBase: PATHS.src},
   },
   parts.loadCSS(),
 ]);
