@@ -71,7 +71,14 @@
     <h1 class="nieuws-title">Nieuws</h1>
     <p class="nieuws-subtitle">#weekvdmobiliteit</p>
     <article class="nieuws-article">
-      <h2 class="intro-title">Studio Brussel lanceert nieuwe namen voor
+      <h2 class="intro-title nieuws-article-title">Studio Brussel lanceert nieuwe namen voor
+        ‘Car Free Festival’.</h2>
+      <img src="assets/images/photos/nieuws-carfree.jpg" alt="car free nieuws img" width="1200" height="800" class="nieuws-article-img">
+      <p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <a href="#" class="nieuws-article-button">lees meer</a>
+    </article>
+    <article class="nieuws-article no-mobile">
+      <h2 class="intro-title nieuws-article-title">Studio Brussel lanceert nieuwe namen voor
         ‘Car Free Festival’.</h2>
       <img src="assets/images/photos/nieuws-carfree.jpg" alt="car free nieuws img" width="1200" height="800" class="nieuws-article-img">
       <p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>

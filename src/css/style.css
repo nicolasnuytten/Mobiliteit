@@ -11,6 +11,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  font-family: Helvetica;
 }
 
 *, *:before, *:after { /* stylelint-disable-line */
@@ -143,7 +144,7 @@ main {
   font-size: var(--text);
   color: var(--dark-blue);
   line-height: 1.5;
-  margin: 1rem auto;
+  margin: 0 auto;
   text-align: left;
 }
 
@@ -361,16 +362,17 @@ main {
   padding: 2rem 0;
   width: 100vw;
   text-align: center;
+  padding-left: 2rem;
 }
 
 .nieuws-article-img {
   height: 30vh;
   width: 60vw;
+  object-fit: cover;
 }
 
 .nieuws-article-button {
   text-align: right;
-  width: 90vw;
   border-bottom: .5rem solid var(--light-blue);
   padding: 0 1rem;
   color: var(--dark-blue);
@@ -384,9 +386,15 @@ main {
   border-bottom: .5rem solid var(--dark-blue);
 }
 
+.no-mobile {
+  display: none;
+}
+
 footer {
   background: var(--light-blue);
-  padding: 1rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
 }
 
 .footer-nieuwsbrief {
@@ -394,11 +402,13 @@ footer {
   font-size: 5vw;
   color: white;
   padding: 1rem;
+  grid-column: span 2;
 }
 
 .nieuwsbrief {
   margin: 1rem auto;
   width: 90vw;
+  grid-row: 2;
 }
 
 .form-email {
@@ -419,6 +429,7 @@ footer {
   outline: none;
   border-bottom: white .2rem solid;
   font-size: 3vw;
+  color: var(--dark-blue);
 }
 
 .footer-info {
@@ -426,6 +437,11 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.links {
+  grid-column: 1;
+  grid-row: 3;
 }
 
 .link-item {
@@ -460,6 +476,9 @@ footer {
   flex-direction: row;
   padding: 1rem;
   justify-content: space-around;
+  grid-column: 2;
+  grid-row: 3;
+
 }
 
 .language-item {
@@ -565,6 +584,7 @@ footer {
     width: 45vw;
     height: 30vh;
     grid-column: 1;
+    object-fit: cover;
   }
 
   .intro-title {
@@ -610,9 +630,11 @@ footer {
 
   .specialday {
     width: 100vw;
-    height: 40vh;
+    height: 40vw;
     margin: 0 auto;
     background-repeat: repeat-x;
+    background-position: top;
+    background-size: 20vw;
     display: grid;
     grid-template-columns: 5vw 50vw 25vw 5vw;
     grid-template-rows: 10vw 25vw;
@@ -629,9 +651,12 @@ footer {
 
   .specialday-info {
     width: 80vw;
+    height: 25vw;
     margin: 0 auto;
     grid-row: 2;
     grid-column: 2;
+    display: flex;
+    justify-content: space-around;
   }
 
   .specialday-text {
@@ -648,16 +673,18 @@ footer {
   .specialday-img {
     display: block;
     width: 32vw;
-    height: 32vh;
+    height: 30vh;
     grid-column: 3;
     z-index: 2;
     margin: 2rem;
     box-shadow: 0 0 10px -4px var(--dark-blue);
+    object-fit: cover;
   }
 
   .home-acties {
     display: grid;
     width: 90vw;
+    height: 50vw;
     grid-template-rows: min-content 50vh;
     grid-template-columns: 50vw 50vw;
     margin: 0 auto;
@@ -677,18 +704,18 @@ footer {
 
   .actie-img {
     width: 40vw;
-    height: 35vw;
+    height: 40vw;
   }
 
   .overlay {
     width: 40vw;
-    height: 35vw;
+    height: 40vw;
   }
 
   .actie-info {
     width: 40vw;
-    height: 40vh;
-    grid-template-rows: 25vw repeat(2, min-content);
+    height: 40vw;
+    grid-template-rows: 30vw repeat(2, min-content);
   }
 
   .actie-title {
@@ -721,8 +748,10 @@ footer {
   }
 
   .organiseer-info {
+    display: flex;
+    justify-content: space-around;
     width: 60vw;
-    height: 30vh;
+    height: 30vw;
     grid-column: 2;
     box-shadow: 0 0 10px -4px var(--dark-blue);
   }
@@ -736,11 +765,107 @@ footer {
     position: absolute;
     z-index: -1;
     width: 60vw;
-    height: 30vh;
+    height: 30vw;
+    object-fit: contain;
   }
 
   .organiseer-button {
     width: 30vw;
     font-size: 2vw;
+  }
+
+  .nieuws {
+    background: var(--light-blue);
+    text-align: left;
+    padding: 1rem;
+  }
+
+  .nieuws-article {
+    width: 90vw;
+    padding: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 30vw 1fr auto;
+    grid-template-rows: min-content 1fr min-content;
+  }
+
+  .nieuws-article-title {
+    grid-column: span 4;
+    font-size: 2vw;
+  }
+
+  .nieuws-subtitle {
+    font-size: 3vw;
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .nieuws-title {
+    font-size: 3vw;
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .nieuws-article-img {
+    width: 30vw;
+    height: 20vh;
+    grid-row-start: 2;
+  }
+
+  .nieuws-article-button {
+    grid-column: 3;
+    grid-row: 3;
+    font-size: 2vw;
+    padding-left: 3rem;
+    align-self: flex-end;
+  }
+
+  footer {
+    grid-template-columns: 70vw 30vw;
+    grid-template-rows: auto;
+  }
+
+  .footer-nieuwsbrief {
+    font-size: 3vw;
+    grid-row: 1;
+    grid-column: 1/ 2;
+  }
+
+  .nieuwsbrief {
+    grid-row: 2;
+    width: 60vw;
+  }
+
+  .form-email {
+    width: 60vw;
+    font-size: 2vw;
+  }
+
+  .form-email-input {
+    font-size: 1.8vw;
+  }
+
+  .language {
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: center;
+    align-self: center;
+    width: 10vw;
+  }
+
+  .language-item {
+    font-size: 2vw;
+  }
+
+  .links {
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .submit {
+    font-size: 2vw;
+    width: 20vw;
   }
 }

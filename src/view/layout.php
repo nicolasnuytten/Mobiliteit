@@ -61,20 +61,18 @@
       <h1 class="footer-nieuwsbrief">Blijf op de hoogte van het laatste nieuws via onze nieuwsbrief!</h1>
       <form class="nieuwsbrief" action="index.php" method="post">
         <div class="form-inputs">
-          <label for="email" class="form-email">Email:<input type="email" name="email" value="" class="form-email-input"></label>
+          <label for="email" class="form-email">Email:<input type="email" name="email" value="" class="form-email-input" placeholder="jouw@email.be"></label>
           <label for="submit" ><input type="submit" name="submit" value="inschrijven" class="submit"> </label>
         </div>
       </form>
-      <section class="footer-info">
-        <div class="links">
+      <section class="links">
           <a href="#"><img src="assets/images/icons/facebook.png" alt="facebook icon" width="48" height="48" class="link-item"></a>
           <a href="#"><img src="assets/images/icons/instagram.png" alt="instagram icon" width="48" height="48" class="link-item"></a>
           <a href="#"><img src="assets/images/icons/twitter.png" alt="twitter icon" width="48" height="42" class="link-item"></a>
-        </div>
-        <div class="language">
+      </section>
+      <section class="language">
           <a href="#" class="language-item active">NL</a>
           <a href="#" class="language-item">FR</a>
-        </div>
       </section>
     </footer>
     <?php echo $js;?>
