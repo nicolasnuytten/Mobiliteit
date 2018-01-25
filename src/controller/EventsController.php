@@ -12,10 +12,21 @@ class EventsController extends Controller {
   }
 
   public function index(){
-
+    $number = 3;
+    $events = $this->eventDAO->randomWithLimit($number);
+    $this->set('events', $events);
   }
 
   public function detail() {
+    $conditions = array();
+    if(!empty($_GET['id'])) {
+      $id = $_GET['id'];
+      $event = $this->eventDAO->search($conditions);
+      $this->set('event', $event[$id - 1]);
+    }
+  }
+
+  public function actie() {
     $conditions = array();
 
     //example: search on title

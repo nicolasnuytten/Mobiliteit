@@ -7,7 +7,7 @@
   <article class="intro">
     <img src="assets/images/photos/intro-img.jpg" alt="intro img" width="960" height="480" class="intro-img">
     <div>
-      <h1 class="intro-title"> Wat is week van de mobiliteit?</h1>
+      <h1 class="title"> Wat is week van de mobiliteit?</h1>
       <p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
     <section class="intro-stats">
@@ -37,27 +37,21 @@
   </article>
   <section class="home-acties">
     <h1 class="home-acties-title">Acties</h1>
-    <section class="actie">
-      <img src="assets/images/photos/poppy.jpg" alt="poppy img" width="2048" height="1536" class="actie-img">
-      <div class="overlay"></div>
-      <div class="actie-info">
-        <h2 class="actie-title">Activiteit</h2>
-        <p class="actie-date">16/09</p>
-        <p class="actie-city">Antwerpen</p>
-        <a href="#" class="actie-link">meer</a>
-      </div>
-    </section>
-    <section class="actie">
-        <img src="assets/images/photos/poppy.jpg" alt="poppy img" width="2048" height="1536" class="actie-img">
+      <?php foreach ($events as $event):
+        $eventDate = date_create($event['start']); ?>
+        <section class="actie">
+        <a href="index.php?page=detail&id=<?php echo $event['id']?>" class="actie-link">
+        <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
         <div class="overlay"></div>
-      <div class="actie-info">
-        <h2 class="actie-title">Activiteit</h2>
-        <p class="actie-date">16/09</p>
-        <p class="actie-city">Antwerpen</p>
-        <a href="#" class="actie-link">meer</a>
-      </div>
-    </section>
-    <a href="#" class="button actie-button"> Zoek meer acties</a>
+        <div class="actie-info">
+          <h2 class="actie-title"><?php echo $event['title']?></h2>
+          <p class="actie-date"><?php echo date_format($eventDate, 'd/m');?></p>
+          <p class="actie-city"><?php echo $event['city']?></p>
+        </div>
+        </a>
+      </section>
+    <?php endforeach;?>
+    <a href="index.php?page=actie" class="button actie-button"> Zoek meer acties</a>
   </section>
   <section class="organiseer">
     <div class="organiseer-info">
@@ -71,17 +65,15 @@
     <h1 class="nieuws-title">Nieuws</h1>
     <p class="nieuws-subtitle">#weekvdmobiliteit</p>
     <article class="nieuws-article">
-      <h2 class="intro-title nieuws-article-title">Studio Brussel lanceert nieuwe namen voor
-        ‘Car Free Festival’.</h2>
+      <h2 class="title nieuws-article-title">Studio Brussel lanceert nieuwe namen voor ‘Car Free Festival’.</h2>
       <img src="assets/images/photos/nieuws-carfree.jpg" alt="car free nieuws img" width="1200" height="800" class="nieuws-article-img">
-      <p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p class="text nieuws-article-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <a href="#" class="nieuws-article-button">lees meer</a>
     </article>
     <article class="nieuws-article no-mobile">
-      <h2 class="intro-title nieuws-article-title">Studio Brussel lanceert nieuwe namen voor
-        ‘Car Free Festival’.</h2>
-      <img src="assets/images/photos/nieuws-carfree.jpg" alt="car free nieuws img" width="1200" height="800" class="nieuws-article-img">
-      <p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h2 class="title nieuws-article-title">Autodeelsalon bedrijf 'Poppy' steeds populairder in Antwerpen.</h2>
+      <img src="assets/images/photos/ANT2.jpg" alt="car free nieuws img" width="1200" height="800" class="nieuws-article-img">
+      <p class="text nieuws-article-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <a href="#" class="nieuws-article-button">lees meer</a>
     </article>
   </section>

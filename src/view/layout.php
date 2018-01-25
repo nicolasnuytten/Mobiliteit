@@ -21,30 +21,30 @@
     </script>
   </head>
   <body>
-    <header>
-      <a href="" class="home-link"><p class="home-link-text">Week van<br> de Mobiliteit</p></a>
+    <header class="navigation">
+      <a href="index.php" class="home-link"><p class="home-link-text">Week van<br> de Mobiliteit</p></a>
       <nav class="tabbar-nav">
         <ul class="tabbar">
           <li class="tabbar-item">
-            <a href="" class="item-text">
+            <a href="index.php?page=actie" class="item-text">
               <img class="item-img" src="assets/images/icons/calendar.png" alt="calendar icon" width="166" height="172">
               <p>acties</p>
             </a>
           </li>
           <li class="tabbar-item">
-            <a href="" class="item-text">
+            <a href="index.php?page=organiseren" class="item-text">
               <img class="item-img" src="assets/images/icons/leaf.png" alt="leaf icon" width="137" height="131">
               <p>organiseren</p>
             </a>
           </li>
           <li class="tabbar-item">
-            <a href="" class="item-text">
+            <a href="index.php?page=nieuws" class="item-text">
               <img class="item-img" src="assets/images/icons/nieuws.png" alt="nieuws icon" width="152" height="187">
               <p>nieuws</p>
             </a>
           </li>
           <li class="tabbar-item">
-            <a href="" class="item-text">
+            <a href="index.php?page=over" class="item-text">
               <img class="item-img" src="assets/images/icons/info.png" alt="info icon" width="235" height="235">
               <p>over</p>
             </a>

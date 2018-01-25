@@ -10,6 +10,14 @@ $routes = array(
   'home' => array(
     'controller' => 'Events',
     'action' => 'index'
+  ),
+  'detail' => array(
+    'controller' => 'Events',
+    'action' => 'detail'
+  ),
+  'actie' => array(
+    'controller' => 'Events',
+    'action' => 'actie'
   )
 );
 

@@ -1,6 +1,5 @@
-<!-- <section>
+<section>
   <h1>Events</h1>
-  <?php foreach($events as $event): ?>
     <article>
       <header><h2><?php echo $event['title']; ?></h2></header>
       <dl>
@@ -18,5 +17,4 @@
         <dt>tags</dt><dd><ul><?php foreach($event['tags'] as $tag): ?><li><?php echo $tag['tag'];?></li><?php endforeach;?></ul></dd>
       </dl>
     </article>
-  <? endforeach;?>
-</section> -->
+</section>
