@@ -3,11 +3,28 @@ require_once __DIR__ . '/DAO.php';
 class EventDAO extends DAO {
 
   public function randomWithLimit($number) {
-    $sql="SELECT * FROM `ma3_auto_events` ORDER BY RAND() LIMIT $number ";
+    $sql="SELECT * FROM `ma3_auto_events` ORDER BY RAND() LIMIT :num ";
     $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':num', $number);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
 
+  public function sameDayWithLimit($start, $number) {
+    $sql="SELECT * FROM `ma3_auto_events` ORDER BY RAND() LIMIT :num ";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':start', $start);
+    $stmt->bindValue(':num', $number);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function filter($search) {
+    $sql="SELECT * FROM `ma3_auto_events` WHERE `title` LIKE :search";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':search', '%'.$search.'%');
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
   public function search($conditions = array()) {

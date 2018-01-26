@@ -24,22 +24,36 @@ class EventsController extends Controller {
       $event = $this->eventDAO->search($conditions);
       $this->set('event', $event[$id - 1]);
     }
+
+    $number = 3;
+    $events = $this->eventDAO->randomWithLimit($number);
+    $this->set('events', $events);
   }
 
   public function actie() {
 
-    if(empty($_POST)){
-      $conditions = array();
-    } else if(!empty($_POST)){
-      echo $_POST['search'];
+      if(empty($_POST)){
+        $conditions = array();
+        $events = $this->eventDAO->search($conditions);
+        $this->set('events', $events);
+      }
+      else {
+      // echo $_POST['search'];
       // echo $_POST['postcode'];
       //
+
       // example: search on title
       $conditions[] = array(
         'field' => 'title',
         'comparator' => 'like',
         'value' => $_POST['search']
       );
+
+      // $conditions[] = array(
+      //   'field' => 'city',
+      //   'comparator' => 'like',
+      //   'value' => $_POST['search']
+      // );
 
       //example: search on organiser_id
       // $conditions[] = array(
@@ -48,7 +62,7 @@ class EventsController extends Controller {
       //   'value' => 1
       // );
 
-      //example: search on postal code
+      // example: search on postal code
       $conditions[] = array(
         'field' => 'postal',
         'comparator' => 'like',
@@ -125,8 +139,10 @@ class EventsController extends Controller {
       //   'comparator' => '=',
       //   'value' => '2018-09-16 18:00:00'
       // );
-    }
 
+
+
+    }
     $events = $this->eventDAO->search($conditions);
     $this->set('events', $events);
   }

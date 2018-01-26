@@ -1,19 +1,80 @@
-<section>
-    <article>
-      <?php $eventDate = date_create($event['start']); ?>
-      <header><h2><?php echo $event['title']; ?></h2></header>
-      <dl>
-        <dt>code</dt><dd><?php echo $event['code'];?></dd>
-        <dt>content</dt><dd><?php echo $event['content'];?></dd>
-        <dt>practical</dt><dd><?php echo $event['practical'];?></dd>
-        <dt>location</dt><dd><?php echo $event['location'];?></dd>
-        <dt>address</dt><dd><?php echo $event['address'];?></dd>
-        <dt>postal</dt><dd><?php echo $event['postal'];?></dd>
-        <dt>city</dt><dd><?php echo $event['city'];?></dd>
-        <dt>start</dt><dd><?php echo date_format($eventDate, 'd/m/Y');?></dd>
-        <dt>link</dt><dd><?php echo $event['link'];?></dd>
-        <dt>organisers</dt><dd><ul><?php foreach($event['organisers'] as $organiser): ?><li><?php echo $organiser['name'];?></li><?php endforeach;?></ul></dd>
-        <dt>tags</dt><dd><ul><?php foreach($event['tags'] as $tag): ?><li><?php echo $tag['tag'];?></li><?php endforeach;?></ul></dd>
-      </dl>
-    </article>
-</section>
+<main>
+  <section class="detail-container">
+      <!-- <nav>
+        <a href="index.php?page=actie" class="button detail-back">Terug</a>
+      </nav> -->
+      <article class="detail">
+        <?php $eventDateStart = date_create($event['start']);
+        $eventDateEnd = date_create($event['end']); ?>
+        <h1 class="title detail-header-title"><?php echo $event['title']; ?></h1>
+        <header class="detail-header zebrapad">
+          <section class="detail-header-info">
+            <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['code'] ;?>" class="detail-header-img">
+            <div class="detail-header-info-container">
+              <p class="detail-header-subtitle"><?php echo $event['city'] ;?></p>
+              <p class="detail-header-text"><?php echo $event['location'] ;?></p>
+            </div>
+            <div class="detail-header-info-container">
+              <p class="detail-header-subtitle">
+                <?php
+                // var_dump(date_format($eventDateStart, 'd'));
+                // var_dump(date_format($eventDateEnd, 'd'));
+                if(date_format($eventDateStart, 'd') == date_format($eventDateEnd, 'd')){
+                  echo date_format($eventDateStart, 'd/m');
+                }
+                else {
+                  echo date_format($eventDateStart, 'd/m');?> - <?php echo date_format($eventDateEnd, 'd/m');
+                }?></p>
+              <p class="detail-header-text"><?php echo date_format($eventDateStart, 'h:i');?> - <?php echo date_format($eventDateEnd, 'h:i');?></p>
+            </div>
+            <a href="#" class="button">Hoe geraak ik daar?</a>
+          </section>
+        </header>
+          <section class="detail-info">
+            <h2 class="detail-info-title title">Informatie</h2>
+            <section class="detail-info-text"><?php echo $event['content'] ;?></section>
+            <aside class="detail-aside">
+              <section class="detail-tags">
+                <h3 class="title">Tags</h3>
+                <ul class="tag-list">
+                  <?php foreach($event['tags'] as $tag): ?><li><?php echo $tag['tag'];?></li><?php endforeach;?>
+                </ul>
+              </section>
+              <section class="detail-links">
+                <a href="#"><img src="assets/images/icons/facebook.png" alt="facebook icon" width="48" height="48" class="link-item"></a>
+                <a href="#"><img src="assets/images/icons/twitter.png" alt="twitter icon" width="48" height="42" class="link-item"></a>
+                <a href="<?php echo $event['link'];?>"><img src="assets/images/icons/web.png" alt="" width="48" height="48" class="link-item"></a>
+              </section>
+            </aside>
+            <?php if(!empty($event['practical'])):?>
+              <h2 class="detail-info-title title">Praktisch</h2>
+              <p class="detail-info-text"><?php echo $event['practical'] ;?></p>
+            <?php endif?>
+            <section class="detail-organisators">
+              <h3 class="title">Organistators</h3>
+              <ul>
+                <?php foreach($event['organisers'] as $organiser): ?><li><?php echo $organiser['name'];?></li>
+                <?php endforeach;?>
+              </ul>
+            </section>
+          </section>
+      </article>
+      <section class="home-acties">
+        <h1 class="home-acties-title">Alternative acties</h1>
+          <?php foreach ($events as $event):
+            $eventDate = date_create($event['start']); ?>
+            <section class="actie home-actie">
+            <a href="index.php?page=detail&id=<?php echo $event['id']?>" class="actie-link">
+            <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
+            <div class="overlay"></div>
+            <div class="actie-info">
+              <h2 class="actie-title"><?php echo $event['title']?></h2>
+              <p class="actie-date"><?php echo date_format($eventDate, 'd/m');?></p>
+              <p class="actie-city"><?php echo $event['city']?></p>
+            </div>
+            </a>
+          </section>
+        <?php endforeach;?>
+      </section>
+  </section>
+</main>

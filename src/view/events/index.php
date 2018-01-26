@@ -13,15 +13,15 @@
     <section class="intro-stats">
       <h2 class="stats-title">2017 in cijfers:</h2>
       <div class="stats-info">
-        <img src="assets/images/icons/world-blue.png" alt="world icon" width="" height="" class="stats-img">
+        <img src="assets/images/icons/world-blue.png" alt="world icon" width="234" height="234" class="stats-img">
         <p class="stats-text">2526 steden</p>
       </div>
       <div class="stats-info">
-        <img src="assets/images/icons/leaf-blue.png" alt="leaf icon" width="" height="" class="stats-img">
+        <img src="assets/images/icons/leaf-blue.png" alt="leaf icon" width="127" height="121" class="stats-img">
         <p class="stats-text">670 acties</p>
       </div>
       <div class="stats-info">
-        <img src="assets/images/icons/nocar-blue.png" alt="nocar icon" width="" height="" class="stats-img">
+        <img src="assets/images/icons/nocar-blue.png" alt="nocar icon" width="234" height="235" class="stats-img">
         <p class="stats-text">1352 car free day</p>
       </div>
     </section>
