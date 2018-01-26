@@ -24,7 +24,7 @@ body {
 }
 
 main {
-  width: 100vw;
+  grid-template-columns: 100vw;
   display: grid;
   grid-row-gap: 3rem;
 }
@@ -304,7 +304,7 @@ main {
   box-shadow: 0 0 10px -4px var(--dark-blue);
 
   &:hover {
-    background: white;
+    background-color: white;
     color: var(--dark-blue);
   }
 }
@@ -390,6 +390,7 @@ footer {
   background: var(--light-blue);
   padding: 2rem;
   display: grid;
+  grid-gap: 1rem;
   grid-template-columns: 50vw min-content;
 
   & .footer-nieuwsbrief {
@@ -485,7 +486,63 @@ footer {
   color: var(--dark-blue);
 }
 
+.filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35vh;
+  margin: 1rem auto;
+
+  & .filter-search {
+    background: url(/assets/images/icons/search-blue.png);
+    background-repeat: no-repeat;
+    background-size: 3rem;
+    background-position: 80vw;
+    outline-color: var(--light-blue);
+  }
+
+  & .filter-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 12vw;
+    font-family: Reitam;
+    font-size: 3vw;
+    outline-color: var(--light-blue);
+  }
+
+  & .filter-date {
+    height: 5rem;
+    background-color: var(--dark-blue);
+    border: none;
+    color: var(--light-blue);
+    font-size: 2vw;
+    outline-color: var(--light-blue);
+    padding: 1rem;
+    width: 90vw;
+  }
+}
+
+.filter-input {
+  height: 8rem;
+  font-size: 1.4rem;
+  border: var(--dark-blue) solid .3rem;
+  padding: .5rem;
+  padding-right: 1rem;
+  outline-color: var(--light-blue);
+  background-color: transparent;
+}
+
+.no-margin {
+  margin: 0;
+}
+
 @media only screen and (min-width: 768px) {
+
+  .zebrapad {
+    background-image: url(/assets/images/icons/zebrapad.png);
+    background-repeat: repeat-x;
+  }
 
   .navigation {
     display: flex;
@@ -574,6 +631,37 @@ footer {
       grid-column: 1;
       object-fit: cover;
     }
+
+    & .intro-stats {
+      grid-column: 2;
+      margin: 2rem auto;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+
+      & .stats-title {
+        font-size: 2vw;
+        grid-column: span 3;
+      }
+
+      & .stats-info {
+        height: 10vw;
+        grid-row-start: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        & .stats-img {
+          width: 5vw;
+          height: 5vw;
+        }
+
+        & .stats-text {
+          font-size: 1.4vw;
+        }
+      }
+    }
   }
 
   .title {
@@ -586,37 +674,6 @@ footer {
     font-size: 1.4vw;
   }
 
-  .intro-stats {
-    grid-column: 2;
-    margin: 2rem auto;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-
-    & .stats-title {
-      font-size: 2vw;
-      grid-column: span 3;
-    }
-
-    & .stats-info {
-      height: 10rem;
-      grid-row-start: 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-
-      & .stats-img {
-        width: 5vw;
-        height: 5vw;
-      }
-
-      & .stats-text {
-        font-size: 1.4vw;
-      }
-    }
-  }
-
   .specialday {
     width: 100vw;
     height: 40vw;
@@ -625,7 +682,7 @@ footer {
     background-position: top;
     background-size: 20vw;
     display: grid;
-    grid-template-columns: 5vw 50vw 25vw 5vw;
+    grid-template-columns: 5vw 50vw 25vw;
     grid-template-rows: 10vw 25vw;
 
     & .specialday-title {
@@ -674,8 +731,12 @@ footer {
     display: grid;
     width: 90vw;
     grid-template-rows: min-content auto;
-    grid-template-columns: 50vw 50vw;
+    grid-template-columns: 50vw;
     margin: 0 auto;
+
+    & .acties-title {
+      font-size: 4vw;
+    }
 
     & .home-acties-title {
       font-size: 5vw;
@@ -728,18 +789,25 @@ footer {
 
   .organiseer {
     display: grid;
-    grid-template-columns: 40vw 60vw;
+    grid-template-columns: 30vw 60vw;
 
     & .organiseer-info {
       display: flex;
       justify-content: space-around;
-      width: 60vw;
+      width: 70vw;
       height: 30vw;
+      padding: 3rem;
       grid-column: 2;
       box-shadow: 0 0 10px -4px var(--dark-blue);
 
       & .organiseer-title {
         font-size: 3vw;
+        text-align: left;
+      }
+
+      & .text {
+        width: 50vw;
+        margin: 0;
       }
 
       & .organiseer-button {
@@ -752,7 +820,7 @@ footer {
       display: block;
       position: absolute;
       z-index: -1;
-      width: 60vw;
+      width: 50vw;
       height: 30vw;
       object-fit: contain;
       padding: 5rem;
@@ -818,14 +886,16 @@ footer {
       font-size: 3vw;
       grid-row: 1;
       grid-column: 1/ 2;
+      padding: 0;
     }
 
     & .nieuwsbrief {
       grid-row: 2;
-      width: 60vw;
+      width: 30vw;
+      margin: 0;
 
       & .form-email {
-        width: 60vw;
+        width: 40vw;
         font-size: 2vw;
       }
 
@@ -857,6 +927,50 @@ footer {
   .submit {
     font-size: 2vw;
     width: 20vw;
+  }
+
+  .filter {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 90vw;
+    height: 10rem;
+
+    & .filter-label {
+      font-size: 2vw;
+      height: 8rem;
+
+      & .filter-date {
+        width: 20vw;
+        font-size: 1.5vw;
+        outline-color: var(--light-blue);
+      }
+
+      & .filter-search {
+        height: 5rem;
+        width: 30vw;
+        outline-color: var(--light-blue);
+        background-size: 2rem;
+        background-position: 25vw;
+      }
+
+      & .filter-postcode {
+        height: 5rem;
+        outline-color: var(--light-blue);
+      }
+    }
+
+    & .filter-submit {
+      height: 5rem;
+      width: 10vw;
+      font-size: 1.4vw;
+      margin: 0;
+      border: none;
+    }
+  }
+
+  .acties-title {
+    grid-column: 1 / 3;
   }
 }
 
@@ -891,13 +1005,22 @@ footer {
   .home-acties {
     grid-template-columns: repeat(3, 30vw);
     grid-gap: 1rem;
+    width: 90vw;
+    margin: 0 auto;
+
+    & .title {
+      grid-column: span 3;
+    }
 
     & .actie-button {
       grid-column: 3;
     }
 
-    & .actie {
+    & .home-actie {
       grid-row: 2;
+    }
+
+    & .actie {
       width: var(--actie-size);
       height: var(--actie-size);
 
@@ -933,8 +1056,48 @@ footer {
       }
     }
   }
+
+  .nieuws {
+
+    & .nieuws-title {
+      margin: 0 auto;
+    }
+
+    & .nieuws-subtitle {
+      margin: 0 auto;
+    }
+
+    & .nieuws-article {
+      margin: 2rem auto;
+    }
+  }
+
+  footer {
+    grid-template-columns: 60vw 50vw;
+    margin-top: 5rem;
+
+    & .footer-nieuwsbrief {
+      font-size: 2vw;
+    }
+
+    & .nieuwsbrief {
+
+      & .form-email {
+        width: 30vw;
+        margin: 1rem 0;
+      }
+    }
+  }
 }
 
-/* @media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1440px) {
 
-} */
+  footer {
+
+    & .footer-nieuwsbrief {
+      font-size: 2vw;
+    }
+
+  }
+
+}

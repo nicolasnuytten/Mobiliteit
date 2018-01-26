@@ -39,7 +39,7 @@
     <h1 class="home-acties-title">Acties</h1>
       <?php foreach ($events as $event):
         $eventDate = date_create($event['start']); ?>
-        <section class="actie">
+        <section class="actie home-actie">
         <a href="index.php?page=detail&id=<?php echo $event['id']?>" class="actie-link">
         <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
         <div class="overlay"></div>

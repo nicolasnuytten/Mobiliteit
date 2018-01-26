@@ -1,6 +1,6 @@
 <section>
-  <h1>Events</h1>
     <article>
+      <?php $eventDate = date_create($event['start']); ?>
       <header><h2><?php echo $event['title']; ?></h2></header>
       <dl>
         <dt>code</dt><dd><?php echo $event['code'];?></dd>
@@ -10,8 +10,7 @@
         <dt>address</dt><dd><?php echo $event['address'];?></dd>
         <dt>postal</dt><dd><?php echo $event['postal'];?></dd>
         <dt>city</dt><dd><?php echo $event['city'];?></dd>
-        <dt>start</dt><dd><?php echo $event['start'];?></dd>
-        <dt>end</dt><dd><?php echo $event['end'];?></dd>
+        <dt>start</dt><dd><?php echo date_format($eventDate, 'd/m/Y');?></dd>
         <dt>link</dt><dd><?php echo $event['link'];?></dd>
         <dt>organisers</dt><dd><ul><?php foreach($event['organisers'] as $organiser): ?><li><?php echo $organiser['name'];?></li><?php endforeach;?></ul></dd>
         <dt>tags</dt><dd><ul><?php foreach($event['tags'] as $tag): ?><li><?php echo $tag['tag'];?></li><?php endforeach;?></ul></dd>
