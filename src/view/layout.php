@@ -28,25 +28,25 @@
           <ul class="tabbar">
             <li class="tabbar-item">
               <a href="index.php?page=actie" class="item-text">
-                <img class="item-img" src="assets/images/icons/calendar.png" alt="calendar icon" width="166" height="172">
+                <img class="item-img" src="assets/images/icons/calendar.svg" alt="calendar icon" width="166" height="172">
                 <p>acties</p>
               </a>
             </li>
             <li class="tabbar-item">
               <a href="index.php?page=organiseren" class="item-text">
-                <img class="item-img" src="assets/images/icons/leaf.png" alt="leaf icon" width="137" height="131">
+                <img class="item-img" src="assets/images/icons/leaf.svg" alt="leaf icon" width="137" height="131">
                 <p>organiseren</p>
               </a>
             </li>
             <li class="tabbar-item">
               <a href="index.php?page=nieuws" class="item-text">
-                <img class="item-img" src="assets/images/icons/nieuws.png" alt="nieuws icon" width="152" height="187">
+                <img class="item-img" src="assets/images/icons/nieuws.svg" alt="nieuws icon" width="152" height="187">
                 <p>nieuws</p>
               </a>
             </li>
             <li class="tabbar-item">
               <a href="index.php?page=over" class="item-text">
-                <img class="item-img" src="assets/images/icons/info.png" alt="info icon" width="235" height="235">
+                <img class="item-img" src="assets/images/icons/info.svg" alt="info icon" width="235" height="235">
                 <p>over</p>
               </a>
             </li>
@@ -73,9 +73,9 @@
           </div>
         </form>
         <section class="links">
-            <a href="#"><img src="assets/images/icons/facebook.png" alt="facebook icon" width="32" height="32" class="link-item"></a>
-            <a href="#"><img src="assets/images/icons/instagram.png" alt="instagram icon" width="32" height="32" class="link-item"></a>
-            <a href="#"><img src="assets/images/icons/twitter.png" alt="twitter icon" width="32" height="30" class="link-item"></a>
+            <a href="#"><img src="assets/images/icons/facebook.svg" alt="facebook icon" width="32" height="32" class="link-item"></a>
+            <a href="#"><img src="assets/images/icons/instagram.svg" alt="instagram icon" width="32" height="32" class="link-item"></a>
+            <a href="#"><img src="assets/images/icons/twitter.svg" alt="twitter icon" width="32" height="30" class="link-item"></a>
         </section>
         <section class="language">
             <a href="#" class="language-item active">NL</a>

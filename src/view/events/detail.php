@@ -9,7 +9,10 @@
           <h1 class="title detail-header-title"><?php echo $event['title']; ?></h1>
           <header class="detail-header">
             <section class="detail-header-info">
-              <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['code'] ;?>" class="detail-header-img">
+              <picture class="detail-header-img">
+                <source type="image/webp" srcset="assets/images/photos/<?php echo $event['code'] ?>.webp"/>
+                <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['code'] ;?>" class="detail-header-img">
+              </picture>
               <div class="detail-header-info-container">
                 <p class="detail-header-subtitle"><?php echo $event['city'] ;?></p>
                 <p class="detail-header-text"><?php echo $event['location'] ;?></p>
@@ -44,9 +47,9 @@
                   <!-- <iframe width="240" height="200" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBMS8tHb5qKuH71I6hm5jxUO1vLbtWLdjI&q=<?php echo $event['location'] . ',' . $event['city'];?>,BE">Error</iframe> -->
                 </section>
                 <section class="detail-links">
-                  <a href="#"><img src="assets/images/icons/facebook.png" alt="facebook icon" width="48" height="48" class="link-item"></a>
-                  <a href="#"><img src="assets/images/icons/twitter.png" alt="twitter icon" width="48" height="42" class="link-item"></a>
-                  <a href="<?php echo $event['link'];?>"><img src="assets/images/icons/web.png" alt="" width="48" height="48" class="link-item"></a>
+                  <a href="#"><img src="assets/images/icons/facebook.svg" alt="facebook icon" width="48" height="48" class="link-item"></a>
+                  <a href="#"><img src="assets/images/icons/twitter.svg" alt="twitter icon" width="48" height="42" class="link-item"></a>
+                  <a href="<?php echo $event['link'];?>"><img src="assets/images/icons/web.svg" alt="" width="48" height="48" class="link-item"></a>
                 </section>
               </aside>
               <section class="detail-praktisch">
@@ -71,7 +74,10 @@
             $eventDate = date_create($event['start']); ?>
             <section class="actie home-actie detail-actie">
             <a href="index.php?page=detail&id=<?php echo $event['id']?>" class="actie-link">
-            <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
+            <picture class="actie-img">
+              <source type="image/webp" srcset="assets/images/photos/intro-img.webp"/>
+              <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
+            </picture>
             <div class="overlay"></div>
             <div class="actie-info">
               <h2 class="actie-title"><?php echo $event['title']?></h2>

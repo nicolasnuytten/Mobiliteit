@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.49 185.3">
+  <title>nieuws</title>
+  <g id="3a18ba07-29f1-4929-b7a7-cf162d747b40" data-name="Layer 2">
+    <g id="be2a8cb1-9fee-4a7b-b0d7-f65d3b3c1ccb" data-name="Nieuws">
+      <g>
+        <rect x="6.78" y="6.78" width="136.93" height="171.74" rx="9.41" ry="9.41" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="13.56"/>
+        <rect x="23.64" y="23.44" width="50.49" height="33.95" fill="#fff"/>
+        <line x1="23.64" y1="72.19" x2="121.13" y2="72.19" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.92"/>
+        <line x1="23.64" y1="86.63" x2="108.57" y2="86.63" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.66"/>
+        <line x1="23.64" y1="102" x2="101.11" y2="102" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.49"/>
+        <line x1="23.64" y1="115.98" x2="117.88" y2="115.98" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.85"/>
+        <line x1="23.64" y1="129.02" x2="117.88" y2="129.02" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.85"/>
+        <line x1="23.64" y1="141.39" x2="109.03" y2="141.39" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.67"/>
+        <line x1="23.64" y1="155.83" x2="109.03" y2="155.83" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.67"/>
+        <path d="M111.1,56a1.05,1.05,0,0,1-.94-.5l-12.77-20V54.89A1.11,1.11,0,0,1,96.28,56H92.47a1.11,1.11,0,0,1-1.11-1.11V25.54a1.1,1.1,0,0,1,1.11-1.09H96.3a1.05,1.05,0,0,1,.94.5L110,45V25.54a1.1,1.1,0,0,1,1.11-1.09H115a1.1,1.1,0,0,1,1.11,1.09V54.89A1.11,1.11,0,0,1,115,56Z" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

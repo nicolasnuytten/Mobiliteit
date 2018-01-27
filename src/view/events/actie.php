@@ -15,7 +15,10 @@
     $eventDate = date_create($event['start']); ?>
     <section class="actie">
       <a href="index.php?page=detail&amp;id=<?php echo $event['id']?>" class="actie-link">
-        <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
+        <picture class="actie-img">
+          <source type="image/webp" srcset="assets/images/photos/<?php echo $event['code'] ;?>.webp"/>
+          <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
+        </picture>
         <div class="overlay"></div>
         <div class="actie-info">
       <h2 class="actie-title"><?php echo $event['title']?></h2>

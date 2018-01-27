@@ -88,7 +88,7 @@ main {
 }
 
 .banner {
-  background: url(/assets/images/icons/pattern.png), var(--light-blue);
+  background: url(/assets/images/icons/pattern.svg), var(--light-blue);
   background-size: 10rem;
   background-blend-mode: soft-light;
 
@@ -200,7 +200,7 @@ main {
 }
 
 .specialday {
-  background: url(/assets/images/icons/zebrapad.png);
+  background: url(/assets/images/icons/zebrapad.svg);
   width: 100vw;
 
   & .specialday-title {
@@ -528,7 +528,7 @@ footer {
   margin: 1rem auto;
 
   & .filter-search {
-    background: url(/assets/images/icons/search-blue.png);
+    background: url(/assets/images/icons/search-blue.svg);
     background-repeat: no-repeat;
     background-size: 3rem;
     background-position: 80vw;
@@ -730,7 +730,7 @@ footer {
 @media only screen and (min-width: 768px) {
 
   .zebrapad {
-    background-image: url(/assets/images/icons/zebrapad.png);
+    background-image: url(/assets/images/icons/zebrapad.svg);
     background-repeat: repeat-x;
   }
 
@@ -1411,7 +1411,7 @@ footer {
     & .intro-content {
       width: 96rem;
       margin: 0 auto;
-      grid-template-rows: 10rem 22rem;
+      grid-template-rows: 14rem 22rem;
       grid-template-columns: min-content 55rem;
     }
 
