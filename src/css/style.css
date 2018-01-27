@@ -91,8 +91,10 @@ main {
   background: url(/assets/images/icons/pattern.png), var(--light-blue);
   background-size: 10rem;
   background-blend-mode: soft-light;
-  padding: 1rem;
-  width: 100vw;
+
+  & div {
+    width: 100vw;
+  }
 
   & .banner-title {
     font-family: Reitam;
@@ -189,6 +191,7 @@ main {
 
 .specialday {
   background: url(/assets/images/icons/zebrapad.png);
+  width: 100vw;
 
   & .specialday-title {
     font-family: Reitam;
@@ -198,6 +201,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    width: 100vw;
   }
 
   & .specialday-img {
@@ -209,13 +213,17 @@ main {
     flex-direction: column;
     background: var(--light-blue);
     padding: 2rem;
+    width: 100vw;
   }
 }
 
 .home-acties {
   margin: 3rem 0;
-  display: flex;
-  flex-direction: column;
+
+  & .home-acties-content {
+    display: flex;
+    flex-direction: column;
+  }
 
   & .home-acties-title {
     text-align: center;
@@ -251,7 +259,7 @@ main {
       position: absolute;
     }
 
-    & :hover .overlay {
+    &:hover .overlay {
       opacity: .2;
     }
   }
@@ -388,23 +396,36 @@ main {
 
 footer {
   background: var(--light-blue);
-  padding: 2rem;
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: 50vw min-content;
 
-  & .footer-nieuwsbrief {
+  & .footer-content {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 70vw 1fr;
+    grid-template-rows: min-content 20rem;
+    padding: 2rem;
+  }
+
+  & .nieuwsbrief-title {
     font-family: HelveticaNeue-Bold;
-    font-size: 5vw;
+    font-size: 3vw;
     color: white;
-    padding: 1rem;
-    grid-column: span 2;
+    grid-column: 1;
+  }
+
+  & .button {
+    width: 40vw;
   }
 
   & .nieuwsbrief {
-    margin: 1rem auto;
-    width: 90vw;
+    width: 60vw;
     grid-row: 2;
+
+    & .form-inputs {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 15rem;
+    }
 
     & .form-email {
       display: flex;
@@ -414,8 +435,7 @@ footer {
       font-family: Reitam;
       color: white;
       font-size: 4vw;
-      width: 90vw;
-      margin: 1rem auto;
+      width: 60vw;
     }
 
     & .form-email-input {
@@ -430,11 +450,13 @@ footer {
 }
 
 .links {
-  grid-column: 1;
-  grid-row: 3;
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   & .link-item {
-    padding: 1rem;
 
     &:hover {
       background-color: var(--dark-blue);
@@ -445,7 +467,7 @@ footer {
 
 .submit {
   background: var(--dark-blue);
-  width: 30vw;
+  width: 20vw;
   padding: 1rem;
   margin: 2rem 0;
   border: none;
@@ -467,7 +489,7 @@ footer {
   padding: 1rem;
   justify-content: space-around;
   grid-column: 2;
-  grid-row: 3;
+  grid-row: 1;
 
 }
 
@@ -577,8 +599,7 @@ footer {
   }
 
   & .detail-header-info-container {
-    width: 80vw;
-    margin: 0 auto;
+    text-align: center;
   }
 
   & .detail-header-subtitle {
@@ -685,9 +706,13 @@ footer {
   }
 
   .navigation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+
+    & div {
+      width: 100vw;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     & .home-link-text {
       font-size: 2vw;
@@ -734,35 +759,48 @@ footer {
 
   .banner {
     background-size: 18rem;
-    display: grid;
-    grid-template-columns: 20vw repeat(2, 30vw) 20vw;
-    grid-template-rows: 1fr 10vh 10vh;
-    align-items: center;
+
+    & div {
+      display: grid;
+      grid-template-columns: repeat(2, 30vw);
+      grid-template-rows: 1fr 10vh;
+      align-items: center;
+      justify-content: center;
+    }
 
     & .banner-title {
       font-size: 6vw;
-      grid-column: span 4;
+      grid-column: span 2;
     }
 
     & .banner-date {
       width: 26vw;
       font-size: 2vw;
       grid-row: 2;
-      grid-column: 3;
+      grid-column: 2;
     }
 
     & .banner-hashtag {
       font-size: 3vw;
       grid-row: 2;
-      grid-column: 2;
+      grid-column: 1;
     }
   }
 
   .intro {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 45vw 45vw;
-    grid-template-rows: 10rem repeat(2, min-content);
+
+    & div {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: 45vw 45vw;
+      grid-template-rows: 10rem repeat(2, min-content);
+    }
+
+    & .intro-info {
+      display: flex;
+      flex-direction: column;
+
+    }
 
     & .intro-img {
       display: block;
@@ -815,20 +853,25 @@ footer {
   }
 
   .specialday {
-    width: 100vw;
+    /* width: 100vw; */
     height: 40vw;
-    margin: 0 auto;
     background-repeat: repeat-x;
     background-position: top;
     background-size: 20vw;
-    display: grid;
-    grid-template-columns: 5vw 50vw 25vw;
-    grid-template-rows: 10vw 25vw;
+
+    & .specialday-content {
+      width: 90vw;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 55vw 25vw;
+      grid-template-rows: 10vw 25vw;
+    }
 
     & .specialday-title {
+      width: 30rem;
       font-size: 4vw;
       grid-row: 1;
-      grid-column: 2;
+      grid-column: 1;
       z-index: 3;
       justify-content: flex-start;
       height: 6vw;
@@ -838,48 +881,55 @@ footer {
       display: block;
       width: 32vw;
       height: 30vw;
-      grid-column: 3;
+      grid-column: 2;
       z-index: 2;
       margin: 2rem;
       box-shadow: 0 0 10px -4px var(--dark-blue);
       object-fit: cover;
     }
-  }
 
-  .specialday-info {
-    width: 80vw;
-    height: 25vw;
-    margin: 0 auto;
-    grid-row: 2;
-    grid-column: 2;
-    display: flex;
-    justify-content: space-around;
+    & .specialday-info {
+      width: 50rem;
+      height: 25vw;
+      margin: 0 auto;
+      grid-row: 2;
+      grid-column: 1;
+      display: flex;
+      justify-content: space-around;
 
-    & .specialday-text {
-      width: 45vw;
-      margin: 1rem;
-    }
+      & .specialday-text {
+        width: 50vw;
+        margin: 1rem;
+      }
 
-    & .specialday-button {
-      width: 40vw;
-      margin: 1rem;
-      font-size: 2vw;
+      & .specialday-button {
+        width: 40vw;
+        margin: 1rem;
+        font-size: 2vw;
+      }
     }
   }
 
   .home-acties {
-    display: grid;
-    width: 90vw;
-    grid-template-rows: min-content auto;
-    grid-template-columns: 50vw;
-    margin: 0 auto;
+
+    & .home-acties-content {
+      display: grid;
+      width: 90vw;
+      grid-template-rows: min-content auto;
+      grid-template-columns: 50vw;
+      margin: 0 auto;
+    }
+
+    & .detail-actie {
+      grid-row: 2;
+    }
 
     & .acties-title {
       font-size: 4vw;
     }
 
     & .home-acties-title {
-      font-size: 5vw;
+      font-size: 4vw;
       grid-row: 1;
       grid-column: 1;
       text-align: left;
@@ -889,6 +939,7 @@ footer {
       grid-row: 1;
       grid-column: 2;
       width: 25vw;
+      margin: 0;
       font-size: 2vw;
       justify-self: right;
     }
@@ -928,8 +979,11 @@ footer {
   }
 
   .organiseer {
-    display: grid;
-    grid-template-columns: 30vw 60vw;
+
+    & .organiseer-content {
+      display: grid;
+      grid-template-columns: 30vw 60vw;
+    }
 
     & .organiseer-info {
       display: flex;
@@ -1019,8 +1073,11 @@ footer {
   }
 
   footer {
-    grid-template-columns: 70vw 30vw;
-    grid-template-rows: auto;
+
+    & div {
+      grid-template-columns: 70vw 30vw;
+      grid-template-rows: auto;
+    }
 
     & .footer-nieuwsbrief {
       font-size: 3vw;
@@ -1033,6 +1090,11 @@ footer {
       grid-row: 2;
       width: 30vw;
       margin: 0;
+
+      & .button {
+        width: 20vw;
+        font-size: 2vw;
+      }
 
       & .form-email {
         width: 40vw;
@@ -1060,7 +1122,7 @@ footer {
   .links {
     grid-row: 2;
     grid-column: 2;
-    justify-self: center;
+    justify-content: space-around;
     align-self: center;
   }
 
@@ -1120,45 +1182,256 @@ footer {
       text-align: left;
     }
 
-    & header {
-      width: 80vw;
+    & .detail-header {
+      width: 100vw;
+      padding: 5rem;
+
+      & .detail-header-img {
+        grid-column: 1;
+      }
+
+      & .detail-header-info-container {
+        text-align: left;
+        grid-column: 2;
+        padding: 1rem;
+      }
+
+      & .button {
+        grid-column: 2;
+      }
+    }
+  }
+
+  .detail-info {
+    grid-template-columns: 60vw 40vw;
+
+    & .detail-aside {
+      grid-row: 2;
+      grid-column: 2;
+      flex-direction: column;
+      height: 45vw;
+      width: 30vw;
+      justify-self: right;
+
+      & .detail-tags {
+
+        & ul {
+          display: flex;
+          flex-direction: column;
+
+          & li {
+            font-size: 2vw;
+          }
+        }
+      }
+    }
+
+    & .title {
+      grid-column: 1;
+      padding-left: 2rem;
+    }
+
+    & .detail-info-text {
+      grid-column: 1;
+      padding-left: 2rem;
+    }
+
+    & p {
+      width: 60vw;
+    }
+
+  }
+
+  .detail-header-info {
+    grid-template-columns: 45vw 48vw;
+    grid-template-rows: 10vw 10vw 10vw;
+
+    & .detail-header-img {
+      grid-column: 2;
+      width: 50vw;
+      height: 30vw;
+      margin-right: 5rem;
+    }
+
+    & .button {
+      width: 30vw;
+      height: 5vw;
+      font-size: 2vw;
+      margin: 0;
+    }
+  }
+
+  .detail-praktisch {
+    grid-row: 3;
+    grid-column: 1;
+  }
+
+  .detail-organisators {
+    grid-row: 4;
+    grid-column: span 2;
+
+    & ul {
+      display: flex;
+      width: 75rem;
+      flex-wrap: wrap;
+    }
+
+    & li {
+      display: flex;
+      width: 15vw;
+      font-size: 1.6vw;
+      justify-content: center;
+      align-items: center;
+      height: 6vw;
     }
   }
 }
 
 @media only screen and (min-width: 1024px) {
 
+  .center {
+    width: 96rem;
+    margin: 0 auto;
+  }
+
+  .navigation {
+
+    & div {
+      width: 96rem;
+      margin: 0 auto;
+    }
+
+    & .home-link-text {
+      font-size: 2rem;
+    }
+  }
+
+  .tabbar {
+    width: 60rem;
+
+    & .tabbar-item {
+      height: 3rem;
+    }
+  }
+
+  .item-text {
+    font-size: 2rem;
+  }
+
+  .banner {
+
+    & div {
+      width: 96rem;
+      margin: 0 auto;
+    }
+
+    & .banner-title {
+      font-size: 6rem;
+    }
+
+    & .banner-hashtag {
+      font-size: 3rem;
+    }
+
+    & .banner-date {
+      width: 26rem;
+      font-size: 2rem;
+    }
+  }
+
+  .home-link-text {
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .text {
+    font-size: 1.6rem;
+  }
+
   .intro {
-    grid-template-rows: 10rem 25vw;
+
+    & .intro-content {
+      width: 96rem;
+      margin: 0 auto;
+      grid-template-rows: 10rem 22rem;
+      grid-template-columns: min-content 55rem;
+    }
 
     & .intro-img {
-      width: 45vw;
-      height: 30vw;
+      width: 35rem;
+      height: 25rem;
     }
 
     & .intro-stats {
       align-items: flex-end;
+      width: 40rem;
 
       & .stats-title {
-        font-size: 3vw;
+        font-size: 3rem;
+      }
+
+      & .stats-info {
+        height: 15rem;
+
+        & .stats-text {
+          font-size: 1.6rem;
+        }
       }
     }
   }
 
-  .specialday-info {
-    width: 80vw;
+  .specialday {
+    height: 40rem;
+    background-size: 20rem;
+
+    & .specialday-title {
+      width: 50rem;
+      font-size: 5rem;
+      height: 6rem;
+    }
+
+    & .specialday-content {
+      width: 96rem;
+      grid-template-columns: 50rem 25rem;
+      grid-template-rows: 10rem 25rem;
+    }
 
     & .specialday-img {
-      width: 40vw;
-      height: 30vw;
+      width: 40rem;
+      height: 30rem;
+    }
+
+    & .specialday-info {
+      width: 80rem;
+      height: 27rem;
+
+      & .specialday-text {
+        width: 40rem;
+        font-size: 1.6rem;
+      }
+
+      & .specialday-button {
+        width: 40rem;
+        font-size: 2rem;
+      }
     }
   }
 
   .home-acties {
-    grid-template-columns: repeat(3, 30vw);
-    grid-gap: 1rem;
-    width: 90vw;
-    margin: 0 auto;
+
+    & .home-acties-content {
+      grid-template-columns: repeat(3, 30rem);
+      grid-gap: 1rem;
+      width: 96rem;
+      margin: 0 auto;
+    }
+
+    & .home-acties-title {
+      font-size: 4rem;
+    }
 
     & .title {
       grid-column: span 3;
@@ -1166,90 +1439,169 @@ footer {
 
     & .actie-button {
       grid-column: 3;
+      width: 25rem;
+      font-size: 2rem;
     }
 
     & .home-actie {
       grid-row: 2;
+      justify-self: center;
     }
 
     & .actie {
-      width: var(--actie-size);
-      height: var(--actie-size);
+      width: 30rem;
+      height: 30rem;
 
       &:nth-of-type(3) {
         display: grid;
       }
 
       & .actie-img {
-        width: var(--actie-size);
-        height: var(--actie-size);
+        width: 30rem;
+        height: 30rem;
       }
 
       & .overlay {
-        width: var(--actie-size);
-        height: var(--actie-size);
+        width: 30rem;
+        height: 30rem;
       }
 
       & .actie-info {
-        width: var(--actie-size);
-        height: var(--actie-size);
+        width: 30rem;
+        height: 30rem;
 
         & .actie-title {
-          font-size: 2vw;
+          font-size: 2rem;
         }
 
         & .actie-date {
-          font-size: 3vw;
+          font-size: 3rem;
         }
 
         & .actie-city {
-          font-size: 2vw;
+          font-size: 2rem;
         }
+      }
+    }
+  }
+
+  .organiseer {
+
+    & .organiseer-content {
+      grid-template-columns: 30rem min-content;
+    }
+
+    & .organiseer-img {
+      width: 50rem;
+      height: 30rem;
+    }
+
+    & .organiseer-info {
+      width: 68vw;
+      height: 30rem;
+
+      & .organiseer-title {
+        font-size: 3rem;
+        width: 65rem;
+      }
+
+      & .text {
+        width: 50rem;
+      }
+
+      & .organiseer-button {
+        width: 30rem;
+        font-size: 2rem;
+        margin: 0;
       }
     }
   }
 
   .nieuws {
 
-    & .nieuws-title {
+    & .nieuws-content {
+      width: 96rem;
       margin: 0 auto;
+    }
+
+    & .nieuws-title {
+      margin: 0;
+      font-size: 3rem;
+      width: 20rem;
     }
 
     & .nieuws-subtitle {
-      margin: 0 auto;
+      margin: 0;
+      font-size: 2rem;
+      width: 10rem;
     }
 
     & .nieuws-article {
-      margin: 2rem auto;
-    }
-  }
+      width: 96rem;
+      padding: 2rem;
+      grid-template-columns: 30rem 1fr 1fr;
 
-  footer {
-    grid-template-columns: 60vw 50vw;
-    margin-top: 5rem;
+      & .nieuws-article-title {
+        font-size: 2rem;
+      }
 
-    & .footer-nieuwsbrief {
-      font-size: 2vw;
-    }
+      & .nieuws-article-img {
+        width: 30rem;
+        height: 20rem;
+      }
 
-    & .nieuwsbrief {
-
-      & .form-email {
-        width: 30vw;
-        margin: 1rem 0;
+      & .nieuws-article-button {
+        font-size: 2rem;
       }
     }
   }
-}
-
-@media only screen and (min-width: 1440px) {
 
   footer {
 
-    & .footer-nieuwsbrief {
-      font-size: 2vw;
+    & .nieuwsbrief-title {
+      font-size: 3rem;
     }
 
-  }
+    & .language {
+      justify-self: right;
+      width: 10rem;
 
+      & .language-item {
+        font-size: 2rem;
+      }
+    }
+
+    & .links {
+      width: 20rem;
+      justify-self: right;
+    }
+
+    & .footer-content {
+      width: 96rem;
+      margin: 0 auto;
+      grid-template-columns: 50rem 46rem;
+      margin-top: 5rem;
+      padding: 1rem;
+    }
+
+    & .footer-nieuwsbrief {
+      font-size: 2rem;
+    }
+
+    & .nieuwsbrief {
+      width: 30rem;
+      font-size: 1.4rem;
+
+      & .form-email {
+        width: 30rem;
+        font-size: 2rem;
+        margin: 1rem 0;
+
+        & .form-email-input {
+          font-size: 1.5rem;
+        }
+      }
+
+    }
+  }
 }

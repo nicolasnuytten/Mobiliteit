@@ -46,10 +46,12 @@
                 <a href="<?php echo $event['link'];?>"><img src="assets/images/icons/web.png" alt="" width="48" height="48" class="link-item"></a>
               </section>
             </aside>
-            <?php if(!empty($event['practical'])):?>
-              <h2 class="detail-info-title title">Praktisch</h2>
-              <p class="detail-info-text"><?php echo $event['practical'] ;?></p>
-            <?php endif?>
+            <section class="detail-praktisch">
+              <?php if(!empty($event['practical'])):?>
+                <h2 class="detail-info-title title">Praktisch</h2>
+                <p class="detail-info-text"><?php echo $event['practical'] ;?></p>
+              <?php endif?>
+            </section>
             <section class="detail-organisators">
               <h3 class="title">Organistators</h3>
               <ul>
@@ -63,7 +65,7 @@
         <h1 class="home-acties-title">Alternative acties</h1>
           <?php foreach ($events as $event):
             $eventDate = date_create($event['start']); ?>
-            <section class="actie home-actie">
+            <section class="actie home-actie detail-actie">
             <a href="index.php?page=detail&id=<?php echo $event['id']?>" class="actie-link">
             <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
             <div class="overlay"></div>

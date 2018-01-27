@@ -1,0 +1,196 @@
+@import 'reset.css';
+
+:root {
+  --dark-blue: #123847;
+  --light-blue: #41c7ff;
+  --light-grey: #f6f6f6;
+  --actie-height: 40vh;
+  --text: 4vw;
+  --actie-size: 30vw;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+*, *:before, *:after { /* stylelint-disable-line */
+  box-sizing: inherit;
+}
+
+body {
+  background: var(--light-grey);
+}
+
+.navigation {
+  background-color: var(--light-blue);
+
+  & .nav-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  & .home-link {
+    font-size: 3rem;
+    font-family: Reitam;
+    color: var(--dark-blue);
+    text-decoration: none;
+  }
+}
+
+.tabbar-nav {
+  display: flex;
+  align-items: center;
+
+  & .tabbar {
+    width: 50rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & img {
+    display: none;
+  }
+
+  & li {
+    font-size: 2rem;
+
+    & .item-text {
+      text-decoration: none;
+      color: white;
+      font-family: Reitam;
+    }
+  }
+}
+
+.center {
+  margin: 0 auto;
+  width: 96rem;
+}
+
+.button {
+  background: var(--dark-blue);
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  font-family: Reitam;
+  box-shadow: 0 0 10px -4px var(--dark-blue);
+  border: none;
+
+  &:hover {
+    background-color: white;
+    color: var(--dark-blue);
+  }
+}
+
+footer {
+  background-color: var(--light-blue);
+
+  & .footer-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+
+    & h1 {
+      font-family: Reitam;
+      color: white;
+      font-size: 2rem;
+    }
+  }
+
+  & form {
+    grid-row: 2;
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 10rem;
+    }
+
+    & .form-email {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 5rem;
+      color: var(--dark-blue);
+      font-size: 1.5rem;
+      font-family: Reitam;
+
+      & input {
+        width: 30rem;
+      }
+    }
+  }
+
+  & .links {
+    grid-row: 2;
+    justify-self: center;
+    width: 25rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    & .link-item:hover {
+      mix-blend-mode: soft-light;
+    }
+  }
+
+  & .language {
+    justify-self: center;
+    display: flex;
+    justify-content: space-around;
+    width: 5rem;
+
+    & a {
+      text-decoration: none;
+      color: white;
+      font-family: Reitam;
+      font-size: 1.4rem;
+
+      &:hover {
+        color: var(--dark-blue);
+      }
+    }
+
+    & .active {
+      color: var(--dark-blue);
+    }
+  }
+}
+
+.banner {
+  background: url(/assets/images/icons/pattern.png), var(--light-blue);
+  background-size: 10rem;
+  background-blend-mode: soft-light;
+
+  & div {
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  & h1 {
+    font-size: 5rem;
+    font-family: Reitam;
+    color: white;
+    text-align: center;
+  }
+
+  & p {
+    font-size: 3rem;
+    font-family: Reitam;
+    color: white;
+    text-align: center;
+  }
+
+  & .banner-date {
+    background-color: var(--dark-blue);
+    padding: 1rem;
+    width: 40rem;
+  }
+}
