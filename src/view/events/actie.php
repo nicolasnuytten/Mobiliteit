@@ -6,23 +6,24 @@
     <input type="submit" name="submit" value="Zoeken" class="button filter-submit">
   </form>
   <section class="home-acties no-margin">
-    <h1 class="title acties-title">Acties</h1>
-    <?php if(empty($events)){
-      echo '<p class="text"> Geen resultaten gevonden, probeer eens opnieuw...</p>';
-    }?>
-    <?php foreach ($events as $event):
-      $eventDate = date_create($event['start']); ?>
-      <section class="actie">
-        <a href="index.php?page=detail&amp;id=<?php echo $event['id']?>" class="actie-link">
-          <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
-          <div class="overlay"></div>
-          <div class="actie-info">
-        <h2 class="actie-title"><?php echo $event['title']?></h2>
-        <p class="actie-date"><?php echo date_format($eventDate, 'd/m');?></p>
-        <p class="actie-city"><?php echo $event['city']?></p>
-      </div>
-      </a>
-    </section>
-    <?php endforeach;?>
+<div class="home-acties-content center">
+  <h1 class="title acties-title">Acties</h1>
+  <?php if(empty($events)){
+    echo '<p class="error"> Geen resultaten gevonden, probeer eens opnieuw...</p>';
+  }?>
+  <?php foreach ($events as $event):
+    $eventDate = date_create($event['start']); ?>
+    <section class="actie">
+      <a href="index.php?page=detail&amp;id=<?php echo $event['id']?>" class="actie-link">
+        <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
+        <div class="overlay"></div>
+        <div class="actie-info">
+      <h2 class="actie-title"><?php echo $event['title']?></h2>
+      <p class="actie-date"><?php echo date_format($eventDate, 'd/m');?></p>
+      <p class="actie-city"><?php echo $event['city']?></p>
+    </div>
+    </a>
+  </section>
+  <?php endforeach;?></div>
   </section>
 </main>

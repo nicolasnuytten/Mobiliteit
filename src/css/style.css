@@ -12,7 +12,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  font-family: Helvetica;
+  font-family: Helvetica, arial, sans-serif;
 }
 
 *, *:before, *:after { /* stylelint-disable-line */
@@ -92,8 +92,12 @@ main {
   background-size: 10rem;
   background-blend-mode: soft-light;
 
-  & div {
+  & .center {
     width: 100vw;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   & .banner-title {
@@ -160,12 +164,18 @@ main {
 }
 
 .text {
-  font-family: HelveticaNeue;
+  font-family: Helvetica;
   font-size: var(--text);
   color: var(--dark-blue);
   line-height: 1.5;
   margin: 0 auto;
   text-align: left;
+}
+
+.error {
+  color: red;
+  font-size: 2rem;
+  width: 70rem;
 }
 
 .stats-info {
@@ -284,7 +294,7 @@ main {
 
   & .actie-date {
     grid-row-start: 2;
-    font-family: HelveticaNeue;
+    font-family: Helvetica;
     font-size: 8vw;
     color: white;
     align-self: flex-end;
@@ -292,7 +302,7 @@ main {
 
   & .actie-city {
     grid-row-start: 3;
-    font-family: HelveticaNeue;
+    font-family: Helvetica;
     font-size: 6vw;
     color: white;
     align-self: flex-end;
@@ -381,7 +391,8 @@ main {
     font-size: 4vw;
     justify-self: right;
     text-decoration: none;
-    font-family: HelveticaNeue-Bold;
+    font-family: Helvetica;
+    font-weight: bold;
 
     &:hover {
       color: var(--light-blue);
@@ -400,25 +411,26 @@ footer {
   & .footer-content {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: 70vw 1fr;
     grid-template-rows: min-content 20rem;
     padding: 2rem;
   }
 
   & .nieuwsbrief-title {
-    font-family: HelveticaNeue-Bold;
-    font-size: 3vw;
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 5vw;
     color: white;
     grid-column: 1;
-  }
-
-  & .button {
-    width: 40vw;
   }
 
   & .nieuwsbrief {
     width: 60vw;
     grid-row: 2;
+
+    & .button {
+      width: 40vw;
+      height: 5rem;
+    }
 
     & .form-inputs {
       display: flex;
@@ -450,17 +462,17 @@ footer {
 }
 
 .links {
-  grid-column: 2;
-  grid-row: 2;
+  grid-column: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 50vw;
+  justify-self: center;
 
   & .link-item {
 
     &:hover {
-      background-color: var(--dark-blue);
-      padding: 1rem;
+      transform: scale(1.2);
     }
   }
 }
@@ -488,8 +500,8 @@ footer {
   flex-direction: row;
   padding: 1rem;
   justify-content: space-around;
-  grid-column: 2;
-  grid-row: 1;
+  grid-column: 1;
+  justify-self: center;
 
 }
 
@@ -568,12 +580,12 @@ footer {
 
   & .detail-header {
     width: 100vw;
-    margin: 0 auto;
+    margin: 5rem auto auto;
     display: grid;
   }
 
   & .detail-header-title {
-    margin: 0 auto 10vw;
+    margin: 0 auto;
     width: 90vw;
     text-align: center;
   }
@@ -611,7 +623,8 @@ footer {
   }
 
   & .detail-header-text {
-    font-family: HelveticaNeue-Bold;
+    font-family: Helvetica;
+    font-weight: bold;
     font-size: 20px;
     color: white;
     letter-spacing: 1.6px;
@@ -623,17 +636,15 @@ footer {
   display: grid;
   grid-template-columns: 100vw;
 
-  & .title {
-    margin: 2rem 0;
-  }
-
   & p {
     width: 90vw;
     margin: 0 auto;
     line-height: 1.5;
   }
 
-  & .bold {
+  & h1 {
+    width: 90vw;
+    margin: 0 auto;
     font-weight: bold;
     margin-top: 1rem;
   }
@@ -680,8 +691,13 @@ footer {
   }
 }
 
+.detail-praktisch {
+  margin: 2rem 0;
+}
+
 .detail-organisators {
   width: 100vw;
+  margin: 2rem 0;
 
   & li {
     padding: 2rem;
@@ -694,8 +710,21 @@ footer {
   }
 }
 
+.maps {
+  padding: 2rem;
+}
+
 .hidden {
   display: none;
+}
+
+.form-submit {
+  background-color: white;
+  width: 10rem;
+  height: 3rem;
+  font-family: Reitam;
+  color: var(--dark-blue);
+  border: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -708,7 +737,8 @@ footer {
   .navigation {
 
     & div {
-      width: 100vw;
+      width: 90vw;
+      margin: 0 auto;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -766,11 +796,13 @@ footer {
       grid-template-rows: 1fr 10vh;
       align-items: center;
       justify-content: center;
+      height: 40rem;
     }
 
     & .banner-title {
       font-size: 6vw;
       grid-column: span 2;
+      line-height: 2;
     }
 
     & .banner-date {
@@ -868,7 +900,7 @@ footer {
     }
 
     & .specialday-title {
-      width: 30rem;
+      width: 40rem;
       font-size: 4vw;
       grid-row: 1;
       grid-column: 1;
@@ -1079,7 +1111,7 @@ footer {
       grid-template-rows: auto;
     }
 
-    & .footer-nieuwsbrief {
+    & .nieuwsbrief-title {
       font-size: 3vw;
       grid-row: 1;
       grid-column: 1/ 2;
@@ -1124,6 +1156,7 @@ footer {
     grid-column: 2;
     justify-content: space-around;
     align-self: center;
+    width: 20vw;
   }
 
   .submit {
@@ -1180,6 +1213,7 @@ footer {
     & .title {
       font-size: 4vw;
       text-align: left;
+      z-index: 2;
     }
 
     & .detail-header {
@@ -1209,19 +1243,34 @@ footer {
       grid-row: 2;
       grid-column: 2;
       flex-direction: column;
-      height: 45vw;
-      width: 30vw;
+      height: 50rem;
+      width: 25rem;
       justify-self: right;
 
       & .detail-tags {
+        height: 35rem;
+
+        & .title {
+          padding: 0;
+        }
 
         & ul {
           display: flex;
-          flex-direction: column;
+          flex-flow: wrap column;
+          height: 25rem;
 
           & li {
-            font-size: 2vw;
+            font-size: 1.5vw;
+            margin: .5rem 0;
           }
+        }
+      }
+
+      & .detail-links {
+
+        & .link-item {
+          width: 3rem;
+          height: 3rem;
         }
       }
     }
@@ -1243,7 +1292,8 @@ footer {
   }
 
   .detail-header-info {
-    grid-template-columns: 45vw 48vw;
+    margin: 0 auto;
+    grid-template-columns: 50vw 30vw;
     grid-template-rows: 10vw 10vw 10vw;
 
     & .detail-header-img {
@@ -1272,18 +1322,23 @@ footer {
 
     & ul {
       display: flex;
-      width: 75rem;
-      flex-wrap: wrap;
     }
 
     & li {
       display: flex;
       width: 15vw;
-      font-size: 1.6vw;
+      font-size: 1.4vw;
       justify-content: center;
       align-items: center;
       height: 6vw;
     }
+  }
+
+  .maps {
+    padding: 0;
+    grid-column: span 2;
+    grid-row: 4;
+    justify-self: center;
   }
 }
 
@@ -1379,6 +1434,11 @@ footer {
         & .stats-text {
           font-size: 1.6rem;
         }
+
+        & .stats-img {
+          width: 5rem;
+          height: 5rem;
+        }
       }
     }
   }
@@ -1423,7 +1483,7 @@ footer {
   .home-acties {
 
     & .home-acties-content {
-      grid-template-columns: repeat(3, 30rem);
+      grid-template-columns: repeat(3, 32rem);
       grid-gap: 1rem;
       width: 96rem;
       margin: 0 auto;
@@ -1431,10 +1491,12 @@ footer {
 
     & .home-acties-title {
       font-size: 4rem;
+      grid-column: span 2;
     }
 
     & .title {
       grid-column: span 3;
+      font-size: 3rem;
     }
 
     & .actie-button {
@@ -1497,7 +1559,7 @@ footer {
     }
 
     & .organiseer-info {
-      width: 68vw;
+      width: 60rem;
       height: 30rem;
 
       & .organiseer-title {
@@ -1602,6 +1664,129 @@ footer {
         }
       }
 
+    }
+  }
+
+  .filter {
+    width: 96rem;
+    margin: 0 auto;
+
+    & .filter-submit {
+      width: 10rem;
+      font-size: 1.6rem;
+    }
+
+    & .filter-label {
+      font-size: 2rem;
+
+      & .filter-search {
+        width: 30rem;
+        background-position: 25rem;
+      }
+
+      & .filter-date {
+        width: 30rem;
+        font-size: 1.5rem;
+      }
+
+    }
+  }
+
+  .detail {
+
+    & .detail-header {
+      width: 96rem;
+      margin: 0 auto;
+    }
+
+    & .detail-header-img {
+      width: 50rem;
+      height: 30rem;
+    }
+
+    & .detail-header-title {
+      width: 96rem;
+      font-size: 4rem;
+    }
+
+    & .detail-header-info {
+      margin: 0 auto;
+      grid-template-columns: 50rem 30rem;
+      grid-template-rows: repeat(3, 10rem);
+
+      & .detail-header-subtitle {
+        font-size: 3rem;
+      }
+
+      & .detail-header-text {
+        font-size: 2rem;
+      }
+
+      & .detail-header-info-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 10rem;
+      }
+    }
+  }
+
+  .detail-info {
+    width: 96rem;
+    margin: 0 auto;
+    grid-template-columns: 60rem 36rem;
+
+    & .title {
+      font-size: 3rem;
+    }
+
+    & h1 {
+      font-size: 1.8rem;
+      width: 96rem;
+    }
+
+    & p {
+      width: 60rem;
+      font-size: 1.4rem;
+    }
+
+    & .detail-aside {
+
+      & .detail-tags {
+
+        & ul {
+          grid-template-columns: 50rem 50rem;
+
+          & li {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+  }
+
+  .detail-praktisch {
+    grid-column: span 2;
+
+    & p {
+      width: 96rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  .detail-organisators {
+    width: 96rem;
+
+    & ul {
+      width: 96rem;
+
+      & li {
+        margin: 1rem;
+        font-size: 1.4rem;
+        height: 6rem;
+        width: 20rem;
+      }
     }
   }
 }

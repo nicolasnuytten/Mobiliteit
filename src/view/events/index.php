@@ -11,7 +11,7 @@
       <img src="assets/images/photos/intro-img.jpg" alt="intro img" width="960" height="480" class="intro-img">
       <div class="intro-info">
         <h1 class="title"> Wat is week van de mobiliteit?</h1>
-        <p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="text"> Elk jaar zet de Week van de Mobiliteit (16 – 22 september) Vlaanderen #goedopweg om mee(r) te autominderen. Tal van acties tijdens de Week doen ons stil staan bij ons verplaatsingsgedrag en laten proeven van de alternatieven. Want wie de overstap maakt ontdekt zelf de voordelen van het stappen, trappen, trein/tram/bus of autodelen.</p>
       </div>
     <section class="intro-stats">
       <h2 class="stats-title">2017 in cijfers:</h2>
@@ -36,7 +36,7 @@
         <img src="assets/images/photos/specialday.jpg" alt="specialday img" width="4256" height="2832" class="specialday-img">
         <div class="specialday-info">
           <p class="text specialday-text">Autoloze zondag is een speciale dag voor heel Europa. Op deze dag worden centra van steden en gemeten afgesloten voor auto’s. Bijvoorbeeld in Brussel kan je gaan rond fietsen op de straat of door de tunnels waar je normaal met de auto zou rijden. Natuurlijk zijn er op deze plaatsen verschillende andere acties gepland rond deze week van de mobiliteit.</p>
-          <a href="#" class="button specialday-button">Bekijk het in jouw buurt</a>
+            <a href="#" class="button specialday-button">Bekijk het in jouw buurt</a>
           <!-- Als geolocation niet lukt moet je een input voor postcode zetten -->
         </div>
       </div>
@@ -65,7 +65,7 @@
     <div class="organiseer-content center">
       <div class="organiseer-info">
         <h1 class="organiseer-title">organiseer zelf je eigen actie</h1>
-        <p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="text"> De Week van de Mobiliteit zet Vlaanderen #goedopweg in de dagdagelijkse verplaatsingen. Meer dan 1.500 acties en initiatieven geven het brede publiek tussen 16 en 22 september een duwtje in de rug om stil te staan bij ons mobiliteitsgedrag en mee(r) te autominderen. De Week is hét moment om de gewoontes te doorbreken en de voordelen te ervaren.</p>
         <a href="#" class="button organiseer-button">Start het organiseren</a>
       </div>
       <img src="assets/images/icons/start-blue.png" alt="start icon" width="636" height="262" class="organiseer-img">
@@ -76,9 +76,9 @@
       <h1 class="nieuws-title">Nieuws</h1>
       <p class="nieuws-subtitle">#weekvdmobiliteit</p>
       <article class="nieuws-article">
-        <h2 class="title nieuws-article-title">Studio Brussel lanceert nieuwe namen voor ‘Car Free Festival’.</h2>
+        <h2 class="title nieuws-article-title">Car Free Day: ‘Zelfs files zijn minder irritant als je carpoolt!’</h2>
         <img src="assets/images/photos/nieuws-carfree.jpg" alt="car free nieuws img" width="1200" height="800" class="nieuws-article-img">
-        <p class="text nieuws-article-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="text nieuws-article-text"> Neem je op 21 september deel aan Car Free Day? Fantastisch! Rest je alleen nog de keuze te maken uit dat mooie aanbod aan duurzame vervoersmiddelen: fiets, trein, bus, tram,... Of waarom niet eens carpoolen met een collega? Melissa, werkneemster bij Eandis in het Guldensporenpark te Merelbeke, is een overtuigd carpoolster. Ze carpoolt twee dagen per week met collega Karlien Waeremoes. Waarom? Dat lees je hier! </p>
         <a href="#" class="nieuws-article-button">lees meer</a>
       </article>
       <article class="nieuws-article no-mobile">

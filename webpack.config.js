@@ -49,14 +49,8 @@ const commonConfig = merge([ {
         },
         ],
       }, {
-        test: /\.php$/,
-        loader: `html-loader`,
-        options: {
-          attrs: [
-            `img:src`,
-            `source:srcset`
-          ]
-        }
+        test: /\.html$/,
+        loader: `html-loader`
       }, {
         test: /\.(jpe?g|png|gif|webp|svg)$/,
         use: [

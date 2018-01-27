@@ -3,65 +3,69 @@
       <!-- <nav>
         <a href="index.php?page=actie" class="button detail-back">Terug</a>
       </nav> -->
-      <article class="detail">
+      <article class="detail zebrapad">
         <?php $eventDateStart = date_create($event['start']);
-        $eventDateEnd = date_create($event['end']); ?>
-        <h1 class="title detail-header-title"><?php echo $event['title']; ?></h1>
-        <header class="detail-header zebrapad">
-          <section class="detail-header-info">
-            <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['code'] ;?>" class="detail-header-img">
-            <div class="detail-header-info-container">
-              <p class="detail-header-subtitle"><?php echo $event['city'] ;?></p>
-              <p class="detail-header-text"><?php echo $event['location'] ;?></p>
-            </div>
-            <div class="detail-header-info-container">
-              <p class="detail-header-subtitle">
-                <?php
-                // var_dump(date_format($eventDateStart, 'd'));
-                // var_dump(date_format($eventDateEnd, 'd'));
-                if(date_format($eventDateStart, 'd') == date_format($eventDateEnd, 'd')){
-                  echo date_format($eventDateStart, 'd/m');
-                }
-                else {
-                  echo date_format($eventDateStart, 'd/m');?> - <?php echo date_format($eventDateEnd, 'd/m');
-                }?></p>
-              <p class="detail-header-text"><?php echo date_format($eventDateStart, 'h:i');?> - <?php echo date_format($eventDateEnd, 'h:i');?></p>
-            </div>
-            <a href="#" class="button">Hoe geraak ik daar?</a>
-          </section>
-        </header>
-          <section class="detail-info">
-            <h2 class="detail-info-title title">Informatie</h2>
-            <section class="detail-info-text"><?php echo $event['content'] ;?></section>
-            <aside class="detail-aside">
-              <section class="detail-tags">
-                <h3 class="title">Tags</h3>
-                <ul class="tag-list">
-                  <?php foreach($event['tags'] as $tag): ?><li><?php echo $tag['tag'];?></li><?php endforeach;?>
+          $eventDateEnd = date_create($event['end']); ?>
+          <h1 class="title detail-header-title"><?php echo $event['title']; ?></h1>
+          <header class="detail-header">
+            <section class="detail-header-info">
+              <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['code'] ;?>" class="detail-header-img">
+              <div class="detail-header-info-container">
+                <p class="detail-header-subtitle"><?php echo $event['city'] ;?></p>
+                <p class="detail-header-text"><?php echo $event['location'] ;?></p>
+              </div>
+              <div class="detail-header-info-container">
+                <p class="detail-header-subtitle">
+                  <?php
+                  // var_dump(date_format($eventDateStart, 'd'));
+                  // var_dump(date_format($eventDateEnd, 'd'));
+                  if(date_format($eventDateStart, 'd') == date_format($eventDateEnd, 'd')){
+                    echo date_format($eventDateStart, 'd/m');
+                  }
+                  else {
+                    echo date_format($eventDateStart, 'd/m');?> - <?php echo date_format($eventDateEnd, 'd/m');
+                  }?></p>
+                <p class="detail-header-text"><?php echo date_format($eventDateStart, 'h:i');?> - <?php echo date_format($eventDateEnd, 'h:i');?></p>
+              </div>
+            </section>
+          </header>
+            <section class="detail-info">
+              <h2 class="detail-info-title title">Informatie</h2>
+              <section class="detail-info-text"><?php echo $event['content'] ;?></section>
+              <aside class="detail-aside">
+                <section class="detail-tags">
+                  <h3 class="title">Tags</h3>
+                  <ul class="tag-list">
+                    <?php foreach($event['tags'] as $tag): ?><li><?php echo $tag['tag'];?></li><?php endforeach;?>
+                  </ul>
+                </section>
+                <section class="detail-map">
+                <section class="maps">
+                  <!-- <iframe width="240" height="200" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBMS8tHb5qKuH71I6hm5jxUO1vLbtWLdjI&q=<?php echo $event['location'] . ',' . $event['city'];?>,BE">Error</iframe> -->
+                </section>
+                <section class="detail-links">
+                  <a href="#"><img src="assets/images/icons/facebook.png" alt="facebook icon" width="48" height="48" class="link-item"></a>
+                  <a href="#"><img src="assets/images/icons/twitter.png" alt="twitter icon" width="48" height="42" class="link-item"></a>
+                  <a href="<?php echo $event['link'];?>"><img src="assets/images/icons/web.png" alt="" width="48" height="48" class="link-item"></a>
+                </section>
+              </aside>
+              <section class="detail-praktisch">
+                <?php if(!empty($event['practical'])):?>
+                  <h2 class="detail-info-title title">Praktisch</h2>
+                  <section class="detail-info-text"><?php echo $event['practical'] ;?></section>
+                <?php endif?>
+              </section>
+              <section class="detail-organisators">
+                <h3 class="title">Organistators</h3>
+                <ul>
+                  <?php foreach($event['organisers'] as $organiser): ?><li><?php echo $organiser['name'];?></li>
+                  <?php endforeach;?>
                 </ul>
               </section>
-              <section class="detail-links">
-                <a href="#"><img src="assets/images/icons/facebook.png" alt="facebook icon" width="48" height="48" class="link-item"></a>
-                <a href="#"><img src="assets/images/icons/twitter.png" alt="twitter icon" width="48" height="42" class="link-item"></a>
-                <a href="<?php echo $event['link'];?>"><img src="assets/images/icons/web.png" alt="" width="48" height="48" class="link-item"></a>
-              </section>
-            </aside>
-            <section class="detail-praktisch">
-              <?php if(!empty($event['practical'])):?>
-                <h2 class="detail-info-title title">Praktisch</h2>
-                <p class="detail-info-text"><?php echo $event['practical'] ;?></p>
-              <?php endif?>
             </section>
-            <section class="detail-organisators">
-              <h3 class="title">Organistators</h3>
-              <ul>
-                <?php foreach($event['organisers'] as $organiser): ?><li><?php echo $organiser['name'];?></li>
-                <?php endforeach;?>
-              </ul>
-            </section>
-          </section>
       </article>
       <section class="home-acties">
+        <div class="home-acties-content center">
         <h1 class="home-acties-title">Alternative acties</h1>
           <?php foreach ($events as $event):
             $eventDate = date_create($event['start']); ?>
@@ -77,6 +81,7 @@
             </a>
           </section>
         <?php endforeach;?>
+      </div>
       </section>
   </section>
 </main>
