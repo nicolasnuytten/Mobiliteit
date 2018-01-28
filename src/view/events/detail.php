@@ -9,7 +9,7 @@
           <h1 class="title detail-header-title"><?php echo $event['title']; ?></h1>
           <header class="detail-header">
             <section class="detail-header-info">
-              <picture class="detail-header-img">
+              <picture>
                 <source type="image/webp" srcset="assets/images/photos/<?php echo $event['code'] ?>.webp"/>
                 <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['code'] ;?>" class="detail-header-img">
               </picture>
@@ -74,8 +74,8 @@
             $eventDate = date_create($event['start']); ?>
             <section class="actie home-actie detail-actie">
             <a href="index.php?page=detail&id=<?php echo $event['id']?>" class="actie-link">
-            <picture class="actie-img">
-              <source type="image/webp" srcset="assets/images/photos/intro-img.webp"/>
+            <picture >
+              <source type="image/webp" srcset="assets/images/photos/<?php echo $event['code'];?>.webp"/>
               <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
             </picture>
             <div class="overlay"></div>

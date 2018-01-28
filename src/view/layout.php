@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -65,7 +65,7 @@
         <form class="nieuwsbrief" action="index.php" method="post">
           <div class="form-inputs">
             <label for="email" class="form-email">Email:
-              <input type="email" name="email" value="" class="form-email-input" placeholder="jouw@email.be">
+              <input id="email" type="email" name="email" value="" class="form-email-input" placeholder="jouw@email.be">
             </label>
             <label for="submit">
               <input type="submit" name="submit" value="inschrijven" class="form-submit">

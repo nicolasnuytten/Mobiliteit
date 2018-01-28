@@ -175,7 +175,8 @@ main {
 .error {
   color: red;
   font-size: 2rem;
-  width: 70rem;
+  margin: 2rem auto;
+  text-align: center;
 }
 
 .stats-info {
@@ -200,7 +201,6 @@ main {
 }
 
 .specialday {
-  background: url(/assets/images/icons/zebrapad.svg);
   width: 100vw;
 
   & .specialday-title {
@@ -524,7 +524,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 35vh;
+  height: 65vw;
   margin: 1rem auto;
 
   & .filter-search {
@@ -598,6 +598,11 @@ footer {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 100vw;
+  padding-bottom: 5rem;
+
+  & picture {
+    margin: 0 auto;
+  }
 
   & .detail-header-img {
     width: 80vw;
@@ -640,6 +645,7 @@ footer {
     width: 90vw;
     margin: 0 auto;
     line-height: 1.5;
+    font-size: 1.4rem;
   }
 
   & h1 {
@@ -647,6 +653,7 @@ footer {
     margin: 0 auto;
     font-weight: bold;
     margin-top: 1rem;
+    font-size: 1.6rem;
   }
 
   & .detail-aside {
@@ -707,12 +714,13 @@ footer {
     font-size: 3vw;
     color: white;
     margin: 1rem auto;
+    width: 100vw;
   }
 }
 
-.maps {
+/* .maps {
   padding: 2rem;
-}
+} */
 
 .hidden {
   display: none;
@@ -729,8 +737,14 @@ footer {
 
 @media only screen and (min-width: 768px) {
 
+  .error {
+    width: 60rem;
+    margin: 0;
+    text-align: left;
+  }
+
   .zebrapad {
-    background-image: url(/assets/images/icons/zebrapad.svg);
+    background-image: url(/../assets/images/icons/zebrapad.svg);
     background-repeat: repeat-x;
   }
 
@@ -889,7 +903,6 @@ footer {
     height: 40vw;
     background-repeat: repeat-x;
     background-position: top;
-    background-size: 20vw;
 
     & .specialday-content {
       width: 90vw;
@@ -897,6 +910,10 @@ footer {
       display: grid;
       grid-template-columns: 55vw 25vw;
       grid-template-rows: 10vw 25vw;
+
+      & picture {
+        z-index: 2;
+      }
     }
 
     & .specialday-title {
@@ -921,7 +938,7 @@ footer {
     }
 
     & .specialday-info {
-      width: 50rem;
+      width: 70vw;
       height: 25vw;
       margin: 0 auto;
       grid-row: 2;
@@ -948,7 +965,7 @@ footer {
       display: grid;
       width: 90vw;
       grid-template-rows: min-content auto;
-      grid-template-columns: 50vw;
+      grid-template-columns: 1fr 1fr;
       margin: 0 auto;
     }
 
@@ -1288,13 +1305,17 @@ footer {
     & p {
       width: 60vw;
     }
-
   }
 
   .detail-header-info {
     margin: 0 auto;
     grid-template-columns: 50vw 30vw;
-    grid-template-rows: 10vw 10vw 10vw;
+    grid-template-rows: min-content 10vw;
+
+    & picture {
+      grid-row: span 2;
+      margin: -2rem;
+    }
 
     & .detail-header-img {
       grid-column: 2;
@@ -1331,6 +1352,8 @@ footer {
       justify-content: center;
       align-items: center;
       height: 6vw;
+      margin: 1rem;
+
     }
   }
 
@@ -1445,7 +1468,6 @@ footer {
 
   .specialday {
     height: 40rem;
-    background-size: 20rem;
 
     & .specialday-title {
       width: 50rem;
@@ -1712,7 +1734,11 @@ footer {
     & .detail-header-info {
       margin: 0 auto;
       grid-template-columns: 50rem 30rem;
-      grid-template-rows: repeat(3, 10rem);
+      grid-template-rows: repeat(2, 10rem);
+
+      & picture {
+        margin: 0;
+      }
 
       & .detail-header-subtitle {
         font-size: 3rem;

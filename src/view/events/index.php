@@ -8,7 +8,7 @@
   </section>
   <article class="intro">
     <div class="intro-content center">
-      <picture class="intro-img">
+      <picture >
         <source type="image/webp" srcset="assets/images/photos/intro-img.webp"/>
         <img src="assets/images/photos/intro-img.jpg" alt="intro img" width="960" height="480" class="intro-img">
       </picture>
@@ -33,20 +33,22 @@
     </section>
     </div>
   </article>
-  <article class="specialday">
+  <article class="specialday zebrapad">
       <div class="specialday-content center">
         <h1 class="specialday-title"> Autoloze Zondag</h1>
-        <picture class="specialday-img">
-          <source type="image/webp" srcset="assets/images/photos/specialday.webp"/>
+        <picture>
+          <source  srcset="assets/images/photos/specialday.webp" type="image/webp"/>
           <img src="assets/images/photos/specialday.jpg" alt="specialday img" width="4256" height="2832" class="specialday-img">
         </picture>
         <div class="specialday-info">
           <p class="text specialday-text">Autoloze zondag is een speciale dag voor heel Europa. Op deze dag worden centra van steden en gemeten afgesloten voor auto’s. Bijvoorbeeld in Brussel kan je gaan rond fietsen op de straat of door de tunnels waar je normaal met de auto zou rijden. Natuurlijk zijn er op deze plaatsen verschillende andere acties gepland rond deze week van de mobiliteit.</p>
-            <a href="#" class="button specialday-button">Bekijk het in jouw buurt</a>
+          <a href="#" class="button specialday-button">Bekijk het in jouw buurt</a>
           <!-- Als geolocation niet lukt moet je een input voor postcode zetten -->
         </div>
       </div>
+
   </article>
+
   <section class="home-acties">
     <div class="home-acties-content center">
       <h1 class="home-acties-title">Acties</h1>
@@ -54,7 +56,7 @@
           $eventDate = date_create($event['start']); ?>
           <section class="actie home-actie">
           <a href="index.php?page=detail&id=<?php echo $event['id']?>" class="actie-link">
-          <picture class="actie-img">
+          <picture>
             <source type="image/webp" srcset="assets/images/photos/<?php echo $event['code'];?>.webp"/>
             <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
           </picture>
@@ -86,7 +88,7 @@
       <p class="nieuws-subtitle">#weekvdmobiliteit</p>
       <article class="nieuws-article">
         <h2 class="title nieuws-article-title">Car Free Day: ‘Zelfs files zijn minder irritant als je carpoolt!’</h2>
-        <picture class="nieuws-article-img">
+        <picture >
           <source type="image/webp" srcset="assets/images/photos/CAR1.webp"/>
           <img src="assets/images/photos/CAR1.jpg" alt="car free nieuws img" width="1200" height="800" class="nieuws-article-img">
         </picture>
@@ -95,7 +97,7 @@
       </article>
       <article class="nieuws-article no-mobile">
         <h2 class="title nieuws-article-title">Voordelige dagpas De Lijn tijdens #WeekvdMobiliteit</h2>
-        <picture class="nieuws-article-img">
+        <picture >
           <source type="image/webp" srcset="assets/images/photos/ANT3.webp"/>
           <img src="assets/images/photos/ANT3.jpg" alt="car free nieuws img" width="1200" height="800" class="nieuws-article-img">
         </picture>

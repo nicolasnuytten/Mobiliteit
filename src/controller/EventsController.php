@@ -31,118 +31,142 @@ class EventsController extends Controller {
   }
 
   public function actie() {
+    if(empty($_GET['search'])){
+      $conditions = array();
+      $events = $this->eventDAO->search($conditions);
+      $this->set('events', $events);
+    }
 
-      if(empty($_POST)){
-        $conditions = array();
-        $events = $this->eventDAO->search($conditions);
-        $this->set('events', $events);
-      }
-      else {
-      // echo $_POST['search'];
-      // echo $_POST['postcode'];
-      //
+    if (!empty($_GET['postcode'])) {
+      $events = $this->eventDAO->filterPostcode($_GET['postcode']);
+    }
+    if (!empty($_GET['search'])) {
+      $events = $this->eventDAO->filterSearch($_GET['search']);
+    }
+    if (!empty($_GET['date'])) {
+      var_dump($_GET['date']);
+      $events = $this->eventDAO->filterDate($_GET['date']);
+    }
+    if ($_SERVER['HTTP_ACCEPT'] == 'application/json') {
+      header('Content-Type: application/json');
+      echo json_encode($events);
+      exit();
+    }
 
-      // example: search on title
-      $conditions[] = array(
-        'field' => 'title',
-        'comparator' => 'like',
-        'value' => $_POST['search']
-      );
-
-      // $conditions[] = array(
-      //   'field' => 'city',
-      //   'comparator' => 'like',
-      //   'value' => $_POST['search']
-      // );
-
-      //example: search on organiser_id
-      // $conditions[] = array(
-      //   'field' => 'organiser_id',
-      //   'comparator' => '=',
-      //   'value' => 1
-      // );
-
+    //
+    //   // $conditions[] = array(
+    //   //   'field' => 'city',
+    //   //   'comparator' => 'like',
+    //   //   'value' => $_POST['search']
+    //   // );
+    //
+    //   //example: search on organiser_id
+    //   // $conditions[] = array(
+    //   //   'field' => 'organiser_id',
+    //   //   'comparator' => '=',
+    //   //   'value' => 1
+    //   // );
+    //
+    if(!empty($_POST['postcode'])){
       // example: search on postal code
       $conditions[] = array(
         'field' => 'postal',
         'comparator' => 'like',
         'value' => $_POST['postcode']
       );
-
-      // $date = date_format($_POST['date'], 'Y-m-d H:i:s');
-      // echo $date;
-      // $conditions[] = array(
-      //   'field' => 'start',
-      //   'comparator' => '=',
-      //   'value' => $date
-      // );
-      // echo $_POST['date'];
-      // $conditions[] = array(
-      //   'field' => 'start',
-      //   'comparator' => '=',
-      //   'value' => $_POST['date']
-      // );
-
-      //example: search on organiser name
-      // $conditions[] = array(
-      //   'field' => 'organiser',
-      //   'comparator' => 'like',
-      //   'value' => $_POST['search']
-      // );
-
-      //example: search on city name
-      // $conditions[] = array(
-      //   'field' => 'city',
-      //   'comparator' => 'like',
-      //   'value' => $_POST['search']
-      // );
-      //
-      // //example: search on tag name
-      // $conditions[] = array(
-      //   'field' => 'tag',
-      //   'comparator' => '=',
-      //   'value' => $_POST['search']
-      // );
-
-      //example: 1-day events on september 17
-      // $conditions[] = array(
-      //   'field' => 'start',
-      //   'comparator' => '>=',
-      //   'value' => '2018-09-17 00:00:00'
-      // );
-      // $conditions[] = array(
-      //   'field' => 'end',
-      //   'comparator' => '<=',
-      //   'value' => '2018-09-17 23:59:59'
-      // );
-
-      //example: events on september 17 (includes multi-day events)
-      // $conditions[] = array(
-      //   'field' => 'start',
-      //   'comparator' => '<=',
-      //   'value' => '2018-09-17 23:59:59'
-      // );
-      // $conditions[] = array(
-      //   'field' => 'end',
-      //   'comparator' => '>=',
-      //   'value' => '2018-09-17 00:00:00'
-      // );
-
-      //example: search on organiser, with certain end date + time
-      // $conditions[] = array(
-      //   'field' => 'organiser',
-      //   'comparator' => 'like',
-      //   'value' => $_POST['search']
-      // );
-      // $conditions[] = array(
-      //   'field' => 'end',
-      //   'comparator' => '=',
-      //   'value' => '2018-09-16 18:00:00'
-      // );
-
-
-
     }
+    // example: search on title
+    if(!empty($_POST['search'])){
+      $conditions[] = array(
+        'field' => 'title',
+        'comparator' => 'like',
+        'value' => $_POST['search']
+      );
+    }
+    if(!empty($_POST['date'])){
+      $conditions[] = array(
+        'field' => 'start',
+        'comparator' => 'like',
+        'value' => $_POST['date']
+      );
+    }
+
+
+    //
+    //   // $date = date_format($_POST['date'], 'Y-m-d H:i:s');
+    //   // echo $date;
+    //   // $conditions[] = array(
+    //   //   'field' => 'start',
+    //   //   'comparator' => '=',
+    //   //   'value' => $date
+    //   // );
+    //   // echo $_POST['date'];
+    //   // $conditions[] = array(
+    //   //   'field' => 'start',
+    //   //   'comparator' => '=',
+    //   //   'value' => $_POST['date']
+    //   // );
+    //
+    //   //example: search on organiser name
+    //   // $conditions[] = array(
+    //   //   'field' => 'organiser',
+    //   //   'comparator' => 'like',
+    //   //   'value' => $_POST['search']
+    //   // );
+    //
+    //   //example: search on city name
+    //   // $conditions[] = array(
+    //   //   'field' => 'city',
+    //   //   'comparator' => 'like',
+    //   //   'value' => $_POST['search']
+    //   // );
+    //   //
+    //   // //example: search on tag name
+    //   // $conditions[] = array(
+    //   //   'field' => 'tag',
+    //   //   'comparator' => '=',
+    //   //   'value' => $_POST['search']
+    //   // );
+    //
+    //   //example: 1-day events on september 17
+    //   // $conditions[] = array(
+    //   //   'field' => 'start',
+    //   //   'comparator' => '>=',
+    //   //   'value' => '2018-09-17 00:00:00'
+    //   // );
+    //   // $conditions[] = array(
+    //   //   'field' => 'end',
+    //   //   'comparator' => '<=',
+    //   //   'value' => '2018-09-17 23:59:59'
+    //   // );
+    //
+    //   //example: events on september 17 (includes multi-day events)
+    //   // $conditions[] = array(
+    //   //   'field' => 'start',
+    //   //   'comparator' => '<=',
+    //   //   'value' => '2018-09-17 23:59:59'
+    //   // );
+    //   // $conditions[] = array(
+    //   //   'field' => 'end',
+    //   //   'comparator' => '>=',
+    //   //   'value' => '2018-09-17 00:00:00'
+    //   // );
+    //
+    //   //example: search on organiser, with certain end date + time
+    //   // $conditions[] = array(
+    //   //   'field' => 'organiser',
+    //   //   'comparator' => 'like',
+    //   //   'value' => $_POST['search']
+    //   // );
+    //   // $conditions[] = array(
+    //   //   'field' => 'end',
+    //   //   'comparator' => '=',
+    //   //   'value' => '2018-09-16 18:00:00'
+    //   // );
+    //
+    //
+    //
+    // }
     $events = $this->eventDAO->search($conditions);
     $this->set('events', $events);
   }

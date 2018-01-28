@@ -1,12 +1,12 @@
 <main class="zebrapad">
-  <form class="filter" action="" method="post">
-    <label for="date" class="filter-label">Zoeken:<input type="text" name="search" value="" placeholder="Titel, tags, organisators..." class="filter-input filter-search"></label>
-    <label for="postcode" class="filter-label">Postcode:<input type="number" name="postcode" value="" placeholder="Postcode..." class="filter-input filter-postcode"></label>
-    <label for="date" class="filter-label">Datum:<input type="date" name="date" value="" class="filter-date" min="2018-09-09" max="2018-09-24" value="Datum" placeholder="Datum"></label>
+  <form class="filter" action="index.php?page=actie" method="post">
+    <label for="search" class="filter-label">Zoeken:<input id="search" type="text" name="search" value="" placeholder="Titel, tags, organisators..." class="filter-input filter-search"></label>
+    <label for="postcode" class="filter-label">Postcode:<input id="postcode" type="number" name="postcode" value="" placeholder="Postcode..." class="filter-input filter-postcode"></label>
+    <label for="date" class="filter-label">Datum:<input id="date" type="date" name="date" value="" class="filter-date" min="2018-09-09" max="2018-09-24" value="Datum" placeholder="Datum"></label>
     <input type="submit" name="submit" value="Zoeken" class="button filter-submit">
   </form>
   <section class="home-acties no-margin">
-<div class="home-acties-content center">
+<div class="home-acties-content center actie-grid">
   <h1 class="title acties-title">Acties</h1>
   <?php if(empty($events)){
     echo '<p class="error"> Geen resultaten gevonden, probeer eens opnieuw...</p>';
@@ -15,7 +15,7 @@
     $eventDate = date_create($event['start']); ?>
     <section class="actie">
       <a href="index.php?page=detail&amp;id=<?php echo $event['id']?>" class="actie-link">
-        <picture class="actie-img">
+        <picture >
           <source type="image/webp" srcset="assets/images/photos/<?php echo $event['code'] ;?>.webp"/>
           <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
         </picture>
