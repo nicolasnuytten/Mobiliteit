@@ -43,8 +43,7 @@
                   </ul>
                 </section>
                 <section class="detail-map">
-                <section class="maps">
-                  <!-- <iframe width="240" height="200" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBMS8tHb5qKuH71I6hm5jxUO1vLbtWLdjI&q=<?php echo $event['location'] . ',' . $event['city'];?>,BE">Error</iframe> -->
+                  <a class="detail-map-link" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $event['location'] . '+' . $event['city'] . '+' . 'Beglie';?>">Bekijk de route</a>
                 </section>
                 <section class="detail-links">
                   <a href="#"><img src="assets/images/icons/facebook.svg" alt="facebook icon" width="48" height="48" class="link-item"></a>
@@ -65,9 +64,8 @@
                   <?php endforeach;?>
                 </ul>
               </section>
-            </section>
       </article>
-      <section class="home-acties">
+      <section class="home-acties">@
         <div class="home-acties-content center">
         <h1 class="home-acties-title">Alternative acties</h1>
           <?php foreach ($events as $event):

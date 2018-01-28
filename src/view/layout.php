@@ -68,7 +68,7 @@
               <input id="email" type="email" name="email" value="" class="form-email-input" placeholder="jouw@email.be">
             </label>
             <label for="submit">
-              <input type="submit" name="submit" value="inschrijven" class="form-submit">
+              <input id="submit" type="submit" name="submit" value="inschrijven" class="form-submit">
             </label>
           </div>
         </form>

@@ -40,12 +40,12 @@ class EventsController extends Controller {
       $events = $this->eventDAO->filterPostcode($_GET['postcode']);
       $this->set('events', $events);
     }
-    if (!empty($_GET['search'])) {
+    if (!empty($_GET['search']))  {
       $events = $this->eventDAO->filterSearch($_GET['search']);
       $this->set('events', $events);
     }
     if (!empty($_GET['date'])) {
-      // var_dump($_GET['date']);
+      var_dump($_GET['date']);
       $events = $this->eventDAO->filterDate($_GET['date']);
       $this->set('events', $events);
     }
@@ -54,22 +54,6 @@ class EventsController extends Controller {
       echo json_encode($events);
       exit();
     }
-
-
-    //
-    //   // $conditions[] = array(
-    //   //   'field' => 'city',
-    //   //   'comparator' => 'like',
-    //   //   'value' => $_POST['search']
-    //   // );
-    //
-    //   //example: search on organiser_id
-    //   // $conditions[] = array(
-    //   //   'field' => 'organiser_id',
-    //   //   'comparator' => '=',
-    //   //   'value' => 1
-    //   // );
-    //
     if(!empty($_POST)){
       if(!empty($_POST['postcode'])){
         // example: search on postal code
@@ -100,7 +84,20 @@ class EventsController extends Controller {
       $this->set('events', $events);
     }
 
-
+    //
+    //   // $conditions[] = array(
+    //   //   'field' => 'city',
+    //   //   'comparator' => 'like',
+    //   //   'value' => $_POST['search']
+    //   // );
+    //
+    //   //example: search on organiser_id
+    //   // $conditions[] = array(
+    //   //   'field' => 'organiser_id',
+    //   //   'comparator' => '=',
+    //   //   'value' => 1
+    //   // );
+    //
       // $conditions[] = array(
       //    'field' => 'tag',
       //    'comparator' => 'like',

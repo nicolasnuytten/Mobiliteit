@@ -2,6 +2,7 @@
   const button = document.querySelector(`.specialday-button`);
   const $searchInput = document.querySelector(`.filter-search`);
   const $postcodeInput = document.querySelector(`.filter-postcode`);
+  const $dateInput = document.querySelector(`.filter-date`);
   const $actieGrid = document.querySelector(`.actie-grid`);
 
   const parsePosition = ({coords}) => {
@@ -44,7 +45,10 @@
 
   const handleInputSearch = () => {
     const q = $searchInput.value.trim();
-    console.log(q);
+    const p = $postcodeInput.value.trim();
+    const d = $dateInput.value.trim();
+    let time = new Date(d);
+    time = `${time.getDate()}`;
     if (q.length > 0) {
       fetch(`index.php?page=actie&search=${q}`, {
         headers: new Headers({
@@ -54,13 +58,19 @@
         .then(r => r.json())
         .then(data => parse(data));
     }
-  };
 
-  const handleInputPostcode = () => {
-    const q = $postcodeInput.value.trim();
-    console.log(q);
-    if (q.length > 0) {
-      fetch(`index.php?page=actie&postcode=${q}`, {
+    if (p.length > 0) {
+      fetch(`index.php?page=actie&postcode=${p}`, {
+        headers: new Headers({
+          Accept: `application/json`
+        })
+      })
+        .then(r => r.json())
+        .then(data => parse(data));
+    }
+
+    if (d.length > 0) {
+      fetch(`index.php?page=actie&date=${time}`, {
         headers: new Headers({
           Accept: `application/json`
         })
@@ -109,9 +119,10 @@
     if (button) {
       handleClickButton();
     }
-    if ($searchInput || $postcodeInput) {
+    if ($searchInput || $postcodeInput || $dateInput) {
       $searchInput.addEventListener(`input`, handleInputSearch);
-      $postcodeInput.addEventListener(`input`, handleInputPostcode);
+      $postcodeInput.addEventListener(`input`, handleInputSearch);
+      $dateInput.addEventListener(`change`, handleInputSearch);
     }
 
   };
