@@ -45,11 +45,8 @@
 
   const handleInputSearch = () => {
     const q = $searchInput.value.trim();
-    const p = $postcodeInput.value.trim();
-    const d = $dateInput.value.trim();
-    let time = new Date(d);
-    time = `${time.getDate()}`;
-    if (q.length > 0) {
+    console.log(q);
+    if (q.length >= 0) {
       fetch(`index.php?page=actie&search=${q}`, {
         headers: new Headers({
           Accept: `application/json`
@@ -58,8 +55,12 @@
         .then(r => r.json())
         .then(data => parse(data));
     }
+  };
 
-    if (p.length > 0) {
+  const handleInputPostcode = () => {
+    const p = $postcodeInput.value.trim();
+    console.log(p);
+    if (p.length >= 0) {
       fetch(`index.php?page=actie&postcode=${p}`, {
         headers: new Headers({
           Accept: `application/json`
@@ -68,8 +69,13 @@
         .then(r => r.json())
         .then(data => parse(data));
     }
+  };
 
-    if (d.length > 0) {
+  const handleInputDate = () => {
+    const d = $dateInput.value.trim();
+    let time = new Date(d);
+    time = `${time.getDate()}`;
+    if (d.length >= 0) {
       fetch(`index.php?page=actie&date=${time}`, {
         headers: new Headers({
           Accept: `application/json`
@@ -80,8 +86,9 @@
     }
   };
 
+
   const parse = results => {
-    console.log(results);
+    // console.log(results);
 
     $actieGrid.innerHTML = results
       .map(actie => createProductItem(actie))
@@ -121,8 +128,8 @@
     }
     if ($searchInput || $postcodeInput || $dateInput) {
       $searchInput.addEventListener(`input`, handleInputSearch);
-      $postcodeInput.addEventListener(`input`, handleInputSearch);
-      $dateInput.addEventListener(`change`, handleInputSearch);
+      $postcodeInput.addEventListener(`input`, handleInputPostcode);
+      $dateInput.addEventListener(`input`, handleInputDate);
     }
 
   };
