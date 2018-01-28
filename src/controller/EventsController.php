@@ -24,7 +24,6 @@ class EventsController extends Controller {
       $event = $this->eventDAO->search($conditions);
       $this->set('event', $event[$id - 1]);
     }
-
     $number = 3;
     $events = $this->eventDAO->randomWithLimit($number);
     $this->set('events', $events);
@@ -39,19 +38,23 @@ class EventsController extends Controller {
 
     if (!empty($_GET['postcode'])) {
       $events = $this->eventDAO->filterPostcode($_GET['postcode']);
+      $this->set('events', $events);
     }
     if (!empty($_GET['search'])) {
       $events = $this->eventDAO->filterSearch($_GET['search']);
+      $this->set('events', $events);
     }
     if (!empty($_GET['date'])) {
-      var_dump($_GET['date']);
+      // var_dump($_GET['date']);
       $events = $this->eventDAO->filterDate($_GET['date']);
+      $this->set('events', $events);
     }
     if ($_SERVER['HTTP_ACCEPT'] == 'application/json') {
       header('Content-Type: application/json');
       echo json_encode($events);
       exit();
     }
+
 
     //
     //   // $conditions[] = array(
@@ -67,29 +70,48 @@ class EventsController extends Controller {
     //   //   'value' => 1
     //   // );
     //
-    if(!empty($_POST['postcode'])){
-      // example: search on postal code
-      $conditions[] = array(
-        'field' => 'postal',
-        'comparator' => 'like',
-        'value' => $_POST['postcode']
-      );
+    if(!empty($_POST)){
+      if(!empty($_POST['postcode'])){
+        // example: search on postal code
+        $conditions[] = array(
+          'field' => 'postal',
+          'comparator' => 'like',
+          'value' => $_POST['postcode']
+        );
+      }
+      // example: search on title
+      if(!empty($_POST['search'])){
+        $conditions[] = array(
+          'field' => 'title',
+          'comparator' => 'like',
+          'value' => $_POST['search']
+        );
+
+      }
+      if(!empty($_POST['date'])){
+        $conditions[] = array(
+          'field' => 'start',
+          'comparator' => 'like',
+          'value' => $_POST['date']
+        );
+      }
+
+      $events = $this->eventDAO->search($conditions);
+      $this->set('events', $events);
     }
-    // example: search on title
-    if(!empty($_POST['search'])){
-      $conditions[] = array(
-        'field' => 'title',
-        'comparator' => 'like',
-        'value' => $_POST['search']
-      );
-    }
-    if(!empty($_POST['date'])){
-      $conditions[] = array(
-        'field' => 'start',
-        'comparator' => 'like',
-        'value' => $_POST['date']
-      );
-    }
+
+
+      // $conditions[] = array(
+      //    'field' => 'tag',
+      //    'comparator' => 'like',
+      //    'value' => $_POST['search']
+      //  );
+      //
+      //  $conditions[] = array(
+      //      'field' => 'organiser',
+      //      'comparator' => 'like',
+      //      'value' => $_POST['search']
+      //    );
 
 
     //
@@ -167,8 +189,7 @@ class EventsController extends Controller {
     //
     //
     // }
-    $events = $this->eventDAO->search($conditions);
-    $this->set('events', $events);
+
   }
 
 }

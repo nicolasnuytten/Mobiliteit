@@ -1,14 +1,14 @@
 <?php
 class DAO {
-  private static $dbHost = "localhost";
-  private static $dbName = "mobi";
-  private static $dbUser = "mobi";
-  private static $dbPass = "mobipass";
+  // private static $dbHost = "localhost";
+  // private static $dbName = "mobi";
+  // private static $dbUser = "mobi";
+  // private static $dbPass = "mobipass";
 
-  // private static $dbHost = "mysqlstudent";
-  // private static $dbName = "nicolasnuythie9v";
-  // private static $dbUser = "nicolasnuythie9v";
-  // private static $dbPass = "shu3ieZe5cho";
+  private static $dbHost = "mysqlstudent";
+  private static $dbName = "nicolasnuythie9v";
+  private static $dbUser = "nicolasnuythie9v";
+  private static $dbPass = "shu3ieZe5cho";
   private static $sharedPDO;
   protected $pdo;
 

@@ -72,9 +72,17 @@
 
   const parse = results => {
     console.log(results);
+
     $actieGrid.innerHTML = results
       .map(actie => createProductItem(actie))
       .join(``);
+
+    if (results.length === 0) {
+      const $error = document.createElement(`p`);
+      $error.classList.add(`error`);
+      $error.textContent = `Geen resultaten gevonden. Probeer eens iets anders...`;
+      $actieGrid.appendChild($error);
+    }
   };
 
   const createProductItem = actie => {

@@ -1,8 +1,5 @@
 const path = require(`path`);
 const webpack = require(`webpack`);
-const HtmlWebpackPlugin = require(`html-webpack-plugin`);
-
-const CriticalPlugin = require(`webpack-plugin-critical`).CriticalPlugin;
 
 const ImageminPlugin = require(`imagemin-webpack-plugin`).default;
 const imageminJpegRecompress = require(`imagemin-jpeg-recompress`);

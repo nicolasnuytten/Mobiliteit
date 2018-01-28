@@ -92,12 +92,18 @@ main {
   background-size: 10rem;
   background-blend-mode: soft-light;
 
+  & .banner-bus-line {
+    display: none;
+  }
+
+  & .banner-bike-line {
+    display: none;
+  }
+
   & .center {
-    width: 100vw;
     height: 40rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
   }
 
   & .banner-title {
@@ -107,6 +113,7 @@ main {
     text-align: center;
     line-height: 1.2;
     margin: 2rem auto;
+    grid-column: span 2;
   }
 
   & .banner-date {
@@ -115,6 +122,7 @@ main {
     color: white;
     font-family: Reitam;
     width: 40vw;
+    height: 5rem;
     text-align: center;
     margin: 2rem auto;
     font-size: 3vw;
@@ -123,7 +131,7 @@ main {
 
   & .banner-hashtag {
     font-family: Reitam;
-    font-size: 3vw;
+    font-size: 4vw;
     color: var(--dark-blue);
     margin: 2rem 0;
     text-align: center;
@@ -184,7 +192,7 @@ main {
   grid-row-start: 2;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   & .stats-img {
@@ -197,6 +205,9 @@ main {
     font-size: 4vw;
     text-align: center;
     color: var(--dark-blue);
+    display: flex;
+    align-items: flex-start;
+    height: 2rem;
   }
 }
 
@@ -356,13 +367,13 @@ main {
 
   & .nieuws-title {
     font-family: Reitam;
-    font-size: 6vw;
+    font-size: 8vw;
     color: var(--dark-blue);
   }
 
   & .nieuws-subtitle {
     font-family: Reitam;
-    font-size: 4vw;
+    font-size: 6vw;
     color: var(--dark-blue);
   }
 }
@@ -804,7 +815,7 @@ footer {
   .banner {
     background-size: 18rem;
 
-    & div {
+    & .center {
       display: grid;
       grid-template-columns: repeat(2, 30vw);
       grid-template-rows: 1fr 10vh;
@@ -1398,6 +1409,14 @@ footer {
 
   .banner {
 
+    & .banner-bus-line {
+      margin-left: 5rem;
+    }
+
+    & .banner-bike-line {
+      margin: 17rem auto;
+    }
+
     & div {
       width: 96rem;
       margin: 0 auto;
@@ -1439,8 +1458,8 @@ footer {
     }
 
     & .intro-img {
-      width: 35rem;
-      height: 25rem;
+      width: 40rem;
+      height: 30rem;
     }
 
     & .intro-stats {
@@ -1785,6 +1804,8 @@ footer {
 
           & li {
             font-size: 1.5rem;
+            width: 10rem;
+            justify-content: space-between;
           }
         }
       }

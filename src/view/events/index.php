@@ -28,7 +28,7 @@
       </div>
       <div class="stats-info">
         <img src="assets/images/icons/nocar-blue.svg" alt="nocar icon" width="234" height="235" class="stats-img">
-        <p class="stats-text">1352 car free day</p>
+        <p class="stats-text">1352 car free days</p>
       </div>
     </section>
     </div>
@@ -38,7 +38,7 @@
         <h1 class="specialday-title"> Autoloze Zondag</h1>
         <picture>
           <source  srcset="assets/images/photos/specialday.webp" type="image/webp"/>
-          <img src="assets/images/photos/specialday.jpg" alt="specialday img" width="4256" height="2832" class="specialday-img">
+          <img src="./assets/images/photos/specialday.jpg" alt="specialday img" width="4256" height="2832" class="specialday-img">
         </picture>
         <div class="specialday-info">
           <p class="text specialday-text">Autoloze zondag is een speciale dag voor heel Europa. Op deze dag worden centra van steden en gemeten afgesloten voor auto’s. Bijvoorbeeld in Brussel kan je gaan rond fietsen op de straat of door de tunnels waar je normaal met de auto zou rijden. Natuurlijk zijn er op deze plaatsen verschillende andere acties gepland rond deze week van de mobiliteit.</p>
@@ -58,7 +58,7 @@
           <a href="index.php?page=detail&id=<?php echo $event['id']?>" class="actie-link">
           <picture>
             <source type="image/webp" srcset="assets/images/photos/<?php echo $event['code'];?>.webp"/>
-            <img src="assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
+            <img src="./assets/images/photos/<?php echo $event['code'];?>.jpg" alt="<?php echo $event['title'];?> img" width="2048" height="1536" class="actie-img">
           </picture>
           <div class="overlay"></div>
           <div class="actie-info">
@@ -79,7 +79,7 @@
         <p class="text"> De Week van de Mobiliteit zet Vlaanderen #goedopweg in de dagdagelijkse verplaatsingen. Meer dan 1.500 acties en initiatieven geven het brede publiek tussen 16 en 22 september een duwtje in de rug om stil te staan bij ons mobiliteitsgedrag en mee(r) te autominderen. De Week is hét moment om de gewoontes te doorbreken en de voordelen te ervaren.</p>
         <a href="#" class="button organiseer-button">Start het organiseren</a>
       </div>
-      <img src="assets/images/icons/start-blue.svg" alt="start icon" width="636" height="262" class="organiseer-img">
+      <img src="./assets/images/icons/start-blue.svg" alt="start icon" width="636" height="262" class="organiseer-img">
     </div>
   </section>
   <section class="nieuws">
@@ -90,7 +90,7 @@
         <h2 class="title nieuws-article-title">Car Free Day: ‘Zelfs files zijn minder irritant als je carpoolt!’</h2>
         <picture >
           <source type="image/webp" srcset="assets/images/photos/CAR1.webp"/>
-          <img src="assets/images/photos/CAR1.jpg" alt="car free nieuws img" width="1200" height="800" class="nieuws-article-img">
+          <img src="./assets/images/photos/CAR1.jpg" alt="car free nieuws img" width="1200" height="800" class="nieuws-article-img">
         </picture>
         <p class="text nieuws-article-text"> Neem je op 21 september deel aan Car Free Day? Fantastisch! Rest je alleen nog de keuze te maken uit dat mooie aanbod aan duurzame vervoersmiddelen: fiets, trein, bus, tram,... Of waarom niet eens carpoolen met een collega? Melissa, werkneemster bij Eandis in het Guldensporenpark te Merelbeke, is een overtuigd carpoolster. Ze carpoolt twee dagen per week met collega Karlien Waeremoes. Waarom? Dat lees je hier! </p>
         <a href="#" class="nieuws-article-button">lees meer</a>
@@ -99,7 +99,7 @@
         <h2 class="title nieuws-article-title">Voordelige dagpas De Lijn tijdens #WeekvdMobiliteit</h2>
         <picture >
           <source type="image/webp" srcset="assets/images/photos/ANT3.webp"/>
-          <img src="assets/images/photos/ANT3.jpg" alt="car free nieuws img" width="1200" height="800" class="nieuws-article-img">
+          <img src="./assets/images/photos/ANT3.jpg" alt="car free nieuws img" width="1200" height="800" class="nieuws-article-img">
         </picture>
         <p class="text nieuws-article-text"> De Lijn ondersteunt ook dit jaar de week van de Mobiliteit door wie mee(r) wil autominderen een voordelige dagpas aan te bieden. Met een dagpas kan je onbeperkt reizen met de bussen en trams van De Lijn. Kinderen (6 tot en met 11 jaar) kunnen genieten van het voordeeltarief van €3, volwassenen betalen € 4.</p>
         <a href="#" class="nieuws-article-button">lees meer</a>
