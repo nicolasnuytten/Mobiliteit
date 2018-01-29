@@ -17,8 +17,6 @@
               <div class="detail-header-info-container">
                 <p class="detail-header-subtitle">
                   <?php
-                  // var_dump(date_format($eventDateStart, 'd'));
-                  // var_dump(date_format($eventDateEnd, 'd'));
                   if(date_format($eventDateStart, 'd') == date_format($eventDateEnd, 'd')){
                     echo date_format($eventDateStart, 'd/m');
                   }

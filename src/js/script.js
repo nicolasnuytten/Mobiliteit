@@ -128,9 +128,11 @@
     if (button) {
       handleGeolocation();
     }
-    if ($searchInput || $postcodeInput || $dateInput) {
+    if ($searchInput) {
       $searchInput.addEventListener(`input`, handleInputSearch);
+    } if ($postcodeInput) {
       $postcodeInput.addEventListener(`input`, handleInputPostcode);
+    } if ($dateInput) {
       $dateInput.addEventListener(`input`, handleInputDate);
     }
   };

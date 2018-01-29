@@ -65,7 +65,7 @@
         <form class="nieuwsbrief" action="index.php" method="post">
           <div class="form-inputs">
             <label for="email" class="form-email">Email:
-              <input id="email" type="email" name="email" value="" class="form-email-input" placeholder="jouw@email.be">
+              <input id="email" type="email" name="email" value="" class="form-email-input" placeholder="Vul hier jouw email in...">
             </label>
             <label for="submit">
               <input id="submit" type="submit" name="submit" value="inschrijven" class="form-submit">

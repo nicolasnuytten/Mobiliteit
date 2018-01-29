@@ -13,6 +13,7 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
   font-family: Helvetica, arial, sans-serif;
+  color: var(--dark-blue);
 }
 
 *, *:before, *:after { /* stylelint-disable-line */
@@ -145,10 +146,11 @@ main {
   & .filter-label {
     display: flex;
     flex-direction: column;
+    box-shadow: 0 0 10px -4px var(--dark-blue);
   }
 
   & .filter-postcode {
-    width: 60vw;
+    width: 30vw;
     background: white;
     margin: 0 auto;
     height: 5rem;
@@ -162,6 +164,13 @@ main {
     font-size: 1.6rem;
     padding: 1rem;
     border: var(--dark-blue);
+    box-shadow: 0 0 10px -4px var(--dark-blue);
+
+    &:hover {
+      background-color: white;
+      color: var(--light-blue);
+      cursor: pointer;
+    }
   }
 
 }
@@ -460,7 +469,7 @@ footer {
   & .nieuwsbrief-title {
     font-family: Helvetica;
     font-weight: bold;
-    font-size: 5vw;
+    font-size: 3vw;
     color: white;
     grid-column: 1;
   }
@@ -850,6 +859,7 @@ footer {
     width: 60rem;
     margin: 0;
     text-align: left;
+    height: 100vh;
   }
 
   .zebrapad {
@@ -879,7 +889,7 @@ footer {
 
   .tabbar {
     justify-content: space-between;
-    width: 40vw;
+    width: 45vw;
 
     & .tabbar-item {
       display: flex;
@@ -899,7 +909,7 @@ footer {
     height: 3vw;
     color: white;
     font-family: Reitam;
-    font-size: 1.5vw;
+    font-size: 2vw;
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -959,7 +969,7 @@ footer {
     }
 
     & .filter-postcode {
-      width: 30rem;
+      width: 20rem;
     }
   }
 
@@ -1256,12 +1266,12 @@ footer {
   footer {
 
     & div {
-      grid-template-columns: 70vw 30vw;
+      grid-template-columns: 50vw 60vw;
       grid-template-rows: auto;
     }
 
     & .nieuwsbrief-title {
-      font-size: 3vw;
+      font-size: 2vw;
       grid-row: 1;
       grid-column: 1/ 2;
       padding: 0;
@@ -1325,7 +1335,7 @@ footer {
       height: 8rem;
 
       & .filter-date {
-        width: 20vw;
+        width: 18vw;
         font-size: 1.5vw;
         outline-color: var(--light-blue);
       }
@@ -1340,6 +1350,7 @@ footer {
 
       & .filter-postcode {
         height: 5rem;
+        width: 20vw;
         outline-color: var(--light-blue);
       }
     }
@@ -1582,6 +1593,10 @@ footer {
       grid-template-columns: min-content 55rem;
     }
 
+    & .title {
+      font-size: 3rem;
+    }
+
     & .intro-img {
       width: 40rem;
       height: 30rem;
@@ -1788,7 +1803,7 @@ footer {
   footer {
 
     & .nieuwsbrief-title {
-      font-size: 3rem;
+      font-size: 2rem;
     }
 
     & .language {
@@ -1852,8 +1867,12 @@ footer {
       }
 
       & .filter-date {
-        width: 30rem;
+        width: 20rem;
         font-size: 1.5rem;
+      }
+
+      & .filter-postcode {
+        width: 20rem;
       }
 
     }

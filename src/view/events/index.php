@@ -16,9 +16,7 @@
 	.st7{fill:none;stroke:#FFFFFF;stroke-width:8.4185;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st8{fill:none;stroke:#FFFFFF;stroke-width:1.8666;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4.6126,4.6126;}
 </style>
-        <defs>
-        </defs>
-
+        <defs></defs>
         <g class="slide-in-right banner-bus">
   <line id="Line_1_" class="st0" x1="6.4" y1="178.2" x2="689" y2="178.2"/>
 	<circle class="st1" cx="135.2" cy="140.4" r="26.4"/>
@@ -77,12 +75,12 @@
 		<path class="st2" d="M271,734.7h-16.8c-1.3,0-2.4-1.1-2.4-2.4l0,0c0-1.3,1.1-2.4,2.4-2.4H271c1.3,0,2.4,1.1,2.4,2.4l0,0
 			C273.4,733.6,272.3,734.7,271,734.7z"/>
 	</g>
-        </g>
+  </g>
       </svg>
       <h1 class="banner-title">week van <br> de mobiliteit</h1>
       <p class="banner-date">16 - 22 september</p>
       <form action="index.php?page=actie" method="post" class="banner-hashtag">
-        <label for="postcode" class="filter-label"><input id="postcode" type="number" name="postcode" value="" placeholder="Postcode..." class="filter-input filter-postcode"></label>
+        <label for="postcode" class="filter-label"><input id="postcode" type="number" name="postcode" value="" placeholder="Vul hier je postcode in..." class="filter-input filter-postcode"></label>
         <input type="submit" name="sumbit" value="Snel zoeken" class="filter-submit">
       </form>
     </div>

@@ -1,17 +1,11 @@
 <main class="zebrapad">
   <form class="filter" action="index.php?page=actie" method="post">
-    <label for="search" class="filter-label">Zoeken:<input id="search" type="text" name="search" value="" placeholder="Titel..." class="filter-input filter-search"></label>
-    <label for="postcode" class="filter-label">Postcode:<input id="postcode" type="number" name="postcode" value="" placeholder="Postcode..." class="filter-input filter-postcode"></label>
+    <label for="search" class="filter-label">Zoeken:<input id="search" type="text" name="search" value="" placeholder="Zoek naar een actie..." class="filter-input filter-search"></label>
+    <label for="postcode" class="filter-label">Postcode:<input id="postcode" type="number" name="postcode" value="" placeholder="Vul je postcode in..." class="filter-input filter-postcode"></label>
     <label for="date" class="filter-label">Datum:<input id="date" type="date" name="date" value="" class="filter-date" min="2018-09-09" max="2018-09-22"></label>
     <input type="submit" name="submit" value="Zoeken" class="button filter-submit">
   </form>
-  <!-- <section class="filter-tag">
-    <ul class="tag-list">
-      <?php foreach ($tags as $tag):?>
-        <li class="tag-item"><?php echo $tag['tag'];?></li>
-      <?php endforeach;?>
-    </ul>
-  </section> -->
+
   <section class="home-acties no-margin">
 <div class="home-acties-content center actie-grid">
   <h1 class="title acties-title">Acties</h1>
