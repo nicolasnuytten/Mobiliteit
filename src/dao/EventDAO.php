@@ -10,31 +10,6 @@ class EventDAO extends DAO {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  public function filterSearch($search) {
-    $sql="SELECT * FROM `ma3_auto_events` WHERE `title` LIKE :search";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindValue(':search', '%'.$search.'%');
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
-
-  public function filterPostcode($postcode) {
-    $sql="SELECT * FROM `ma3_auto_events` WHERE `postal` LIKE :postcode";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindValue(':postcode', '%'.$postcode.'%');
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
-
-  public function filterDate($date) {
-    $sql="SELECT * FROM `ma3_auto_events` WHERE `start` LIKE :datee";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindValue(':datee', $date . '%');
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
-
-
   public function search($conditions = array()) {
     $sql = "SELECT DISTINCT
       ma3_auto_events.*

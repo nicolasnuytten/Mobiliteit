@@ -65,7 +65,7 @@
                 </ul>
               </section>
       </article>
-      <section class="home-acties">@
+      <section class="home-acties">
         <div class="home-acties-content center">
         <h1 class="home-acties-title">Alternative acties</h1>
           <?php foreach ($events as $event):

@@ -37,18 +37,35 @@ class EventsController extends Controller {
     }
 
     if (!empty($_GET['postcode'])) {
-      $events = $this->eventDAO->filterPostcode($_GET['postcode']);
+      $conditions[] = array(
+        'field' => 'postal',
+        'comparator' => 'like',
+        'value' => $_GET['postcode']
+      );
+      $events = $this->eventDAO->search($conditions);
       $this->set('events', $events);
     }
+
     if (!empty($_GET['search']))  {
-      $events = $this->eventDAO->filterSearch($_GET['search']);
+      $conditions[] = array(
+        'field' => 'title',
+        'comparator' => 'like',
+        'value' => $_GET['search']
+      );
+      $events = $this->eventDAO->search($conditions);
       $this->set('events', $events);
     }
+
     if (!empty($_GET['date'])) {
-      var_dump($_GET['date']);
-      $events = $this->eventDAO->filterDate($_GET['date']);
+      $conditions[] = array(
+        'field' => 'start',
+        'comparator' => 'like',
+        'value' => $_GET['date']
+      );
+      $events = $this->eventDAO->search($conditions);
       $this->set('events', $events);
     }
+
     if ($_SERVER['HTTP_ACCEPT'] == 'application/json') {
       header('Content-Type: application/json');
       echo json_encode($events);

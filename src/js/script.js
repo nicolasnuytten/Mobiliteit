@@ -88,8 +88,6 @@
 
 
   const parse = results => {
-    // console.log(results);
-
     $actieGrid.innerHTML = results
       .map(actie => createProductItem(actie))
       .join(``);
@@ -104,7 +102,7 @@
 
   const createProductItem = actie => {
     let date = new Date(actie.start);
-    date = `${date.getDate()} / ${date.getMonth() + 1}`;
+    date = `${date.getDate()}/0${date.getMonth() + 1}`;
     return `
       <section class="actie">
         <a href="index.php?page=detail&amp;id=${actie.id}" class="actie-link">
