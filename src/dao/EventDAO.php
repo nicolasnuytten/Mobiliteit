@@ -10,6 +10,22 @@ class EventDAO extends DAO {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  public function randomWithLimitNotId($number, $id) {
+    $sql="SELECT * FROM `ma3_auto_events` WHERE `id` != :id ORDER BY RAND() LIMIT :num ";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':num', $number);
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function tags() {
+    $sql="SELECT * FROM `ma3_auto_tags` WHERE 1";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   public function search($conditions = array()) {
     $sql = "SELECT DISTINCT
       ma3_auto_events.*

@@ -15,6 +15,16 @@ class EventsController extends Controller {
     $number = 3;
     $events = $this->eventDAO->randomWithLimit($number);
     $this->set('events', $events);
+
+    if (!empty($_POST['postcode'])) {
+      $conditions[] = array(
+        'field' => 'postal',
+        'comparator' => 'like',
+        'value' => $_POST['postcode']
+      );
+      $events = $this->eventDAO->search($conditions);
+      $this->set('events', $events);
+    }
   }
 
   public function detail() {
@@ -25,7 +35,8 @@ class EventsController extends Controller {
       $this->set('event', $event[$id - 1]);
     }
     $number = 3;
-    $events = $this->eventDAO->randomWithLimit($number);
+    $id = $_GET['id'];
+    $events = $this->eventDAO->randomWithLimitNotId($number, $id);
     $this->set('events', $events);
   }
 
@@ -34,6 +45,8 @@ class EventsController extends Controller {
       $conditions = array();
       $events = $this->eventDAO->search($conditions);
       $this->set('events', $events);
+      $tags = $this->eventDAO->tags();
+      $this->set('tags', $tags);
     }
 
     if (!empty($_GET['postcode'])) {
@@ -60,7 +73,7 @@ class EventsController extends Controller {
       $conditions[] = array(
         'field' => 'start',
         'comparator' => 'like',
-        'value' => $_GET['date']
+        'value' =>  $_GET['date']
       );
       $events = $this->eventDAO->search($conditions);
       $this->set('events', $events);

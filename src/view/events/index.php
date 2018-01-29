@@ -81,7 +81,10 @@
       </svg>
       <h1 class="banner-title">week van <br> de mobiliteit</h1>
       <p class="banner-date">16 - 22 september</p>
-      <p class="banner-hashtag">#goedopweg</p>
+      <form action="index.php?page=actie" method="post" class="banner-hashtag">
+        <label for="postcode" class="filter-label"><input id="postcode" type="number" name="postcode" value="" placeholder="Postcode..." class="filter-input filter-postcode"></label>
+        <input type="submit" name="sumbit" value="Snel zoeken" class="filter-submit">
+      </form>
     </div>
   </section>
   <article class="intro">
@@ -92,7 +95,7 @@
       </picture>
       <div class="intro-info">
         <h1 class="title"> Wat is week van de mobiliteit?</h1>
-        <p class="text"> Elk jaar zet de Week van de Mobiliteit (16 – 22 september) Vlaanderen #goedopweg om mee(r) te autominderen. Tal van acties tijdens de Week doen ons stil staan bij ons verplaatsingsgedrag en laten proeven van de alternatieven. Want wie de overstap maakt ontdekt zelf de voordelen van het stappen, trappen, trein/tram/bus of autodelen.</p>
+        <p class="text"> Elk jaar zet de Week van de Mobiliteit <span class="bold">(16 – 22 september)</span> Vlaanderen #goedopweg om mee(r) te <span class="bold">autominderen</span>. Tal van acties tijdens de Week doen ons stil staan bij ons verplaatsingsgedrag en laten proeven van de alternatieven. Want wie de overstap maakt ontdekt zelf de voordelen van het <span class="bold">stappen, trappen, trein/tram/bus of autodelen</span>.</p>
       </div>
     <section class="intro-stats">
       <h2 class="stats-title">2017 in cijfers:</h2>
@@ -119,7 +122,7 @@
           <img src="./assets/images/photos/specialday.jpg" alt="specialday img" width="4256" height="2832" class="specialday-img">
         </picture>
         <div class="specialday-info">
-          <p class="text specialday-text">Autoloze zondag is een speciale dag voor heel Europa. Op deze dag worden centra van steden en gemeten afgesloten voor auto’s. Bijvoorbeeld in Brussel kan je gaan rond fietsen op de straat of door de tunnels waar je normaal met de auto zou rijden. Natuurlijk zijn er op deze plaatsen verschillende andere acties gepland rond deze week van de mobiliteit.</p>
+          <p class="text specialday-text">Autoloze zondag is een <span class="bold">speciale dag voor heel Europa</span>. Op deze dag worden centra van steden en gemeten afgesloten voor auto’s. Bijvoorbeeld in Brussel kan je gaan rond fietsen op de straat of door de tunnels waar je normaal met de auto zou rijden. Natuurlijk zijn er op deze plaatsen verschillende andere acties gepland rond deze week van de mobiliteit.</p>
           <a href="#" class="button specialday-button">Bekijk het in jouw buurt</a>
           <!-- Als geolocation niet lukt moet je een input voor postcode zetten -->
         </div>
@@ -154,7 +157,7 @@
     <div class="organiseer-content center">
       <div class="organiseer-info">
         <h1 class="organiseer-title">organiseer zelf je eigen actie</h1>
-        <p class="text"> De Week van de Mobiliteit zet Vlaanderen #goedopweg in de dagdagelijkse verplaatsingen. Meer dan 1.500 acties en initiatieven geven het brede publiek tussen 16 en 22 september een duwtje in de rug om stil te staan bij ons mobiliteitsgedrag en mee(r) te autominderen. De Week is hét moment om de gewoontes te doorbreken en de voordelen te ervaren.</p>
+        <p class="text"> De Week van de Mobiliteit zet Vlaanderen #goedopweg in de dagdagelijkse verplaatsingen. Meer dan <span class="bold">1.500 acties</span> en initiatieven geven het brede publiek tussen 16 en 22 september een duwtje in de rug om stil te staan bij ons mobiliteitsgedrag en mee(r) te autominderen. De Week is hét moment om de gewoontes te doorbreken en de voordelen te ervaren.</p>
         <a href="#" class="button organiseer-button">Start het organiseren</a>
       </div>
       <img src="./assets/images/icons/start-blue.svg" alt="start icon" width="636" height="262" class="organiseer-img">

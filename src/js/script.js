@@ -14,11 +14,9 @@
   };
 
   const getAddress = ({latitude: lat, longitude: lon}) => {
-
     fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
       .then(r => r.json())
       .then(parseAddress);
-
   };
 
   const setInfo = message => {
@@ -31,8 +29,7 @@
     }
   };
 
-  const handleClickButton = () => {
-
+  const handleGeolocation = () => {
     if (`geolocation` in navigator) {
       button.href = `index.php?page=actie&search=auto`;
       button.textContent = `Bekijk autoloze acties`;
@@ -72,9 +69,16 @@
   };
 
   const handleInputDate = () => {
+    console.log($dateInput.value);
     const d = $dateInput.value.trim();
     let time = new Date(d);
-    time = `${time.getDate()}`;
+    let day;
+    if (time.getDate() < 10) {
+      day = `0${time.getDate()}`;
+    } else {
+      day = `${time.getDate()}`;
+    }
+    time = `${time.getFullYear()}-0${time.getMonth() + 1}-${day}`;
     if (d.length >= 0) {
       fetch(`index.php?page=actie&date=${time}`, {
         headers: new Headers({
@@ -122,16 +126,14 @@
 
   const init = () => {
     if (button) {
-      handleClickButton();
+      handleGeolocation();
     }
     if ($searchInput || $postcodeInput || $dateInput) {
       $searchInput.addEventListener(`input`, handleInputSearch);
       $postcodeInput.addEventListener(`input`, handleInputPostcode);
       $dateInput.addEventListener(`input`, handleInputDate);
     }
-
   };
-
 
   init();
 }

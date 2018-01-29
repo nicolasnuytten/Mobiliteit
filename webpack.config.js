@@ -12,7 +12,6 @@ const PATHS = {
   dist: path.join(__dirname, `dist`),
 };
 
-
 const commonConfig = merge([ {
   entry: [
     path.join(PATHS.src, `css/style.css`),
@@ -48,6 +47,12 @@ const commonConfig = merge([ {
       }, {
         test: /\.html$/,
         loader: `html-loader`
+      }, {
+        test: /\.php$/,
+        loaders: [
+          `html-minify`,
+          `php-loader`
+        ]
       }, {
         test: /\.(jpe?g|png|gif|webp|svg)$/,
         use: [
@@ -101,7 +106,7 @@ const productionConfig = merge([
         plugins: [
           imageminJpegRecompress({})
         ]
-      })
+      }),
     ]
   }
 ]);

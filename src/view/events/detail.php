@@ -1,8 +1,5 @@
 <main>
   <section class="detail-container">
-      <!-- <nav>
-        <a href="index.php?page=actie" class="button detail-back">Terug</a>
-      </nav> -->
       <article class="detail zebrapad">
         <?php $eventDateStart = date_create($event['start']);
           $eventDateEnd = date_create($event['end']); ?>
@@ -43,7 +40,7 @@
                   </ul>
                 </section>
                 <section class="detail-map">
-                  <a class="detail-map-link" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $event['location'] . '+' . $event['city'] . '+' . 'Beglie';?>">Bekijk de route</a>
+                  <a class="detail-map-link" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $event['location'] . '+' . $event['city'] . '+' . 'BE';?>">Bekijk de route</a>
                 </section>
                 <section class="detail-links">
                   <a href="#"><img src="assets/images/icons/facebook.svg" alt="facebook icon" width="48" height="48" class="link-item"></a>
